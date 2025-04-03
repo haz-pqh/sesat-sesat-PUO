@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Sesat&nbsp;-&nbsp;sesat&nbsp;PUO&nbsp;Official&nbsp;Website</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo.png" rel="icon">
+  <link href="assets/img/logo.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Dewi
+  * Template URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+  <style>
+    .card {
+        border: 1px solid #ffffff;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+    .card-header {
+        background: #f8f8f8;
+        padding: 10px;
+        cursor: pointer;
+    }
+    .card-body {
+        padding: 10px;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.5s ease, opacity 0.5s ease;
+    }
+    .card-body.show {
+        max-height: 200px; /* Adjust based on content height */
+        opacity: 1;
+    }
+    .layer {
+            position: absolute;
+            width: 100%;
+            height: 50vh;
+            overflow-x: hidden;
+            margin-left: -10px;
+            margin-top: -25vh;
+            overflow-y: hidden;
+        }
+        .icon {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            from {
+                transform: translateY(-100px);
+            }
+            to {
+                transform: translateY(45vh);
+                
+            }
+        }
+        .pile {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .pile .icon {
+            position: static;
+            margin: -5px;
+            transform: rotate(var(--rotation));
+        }
+
+</style>
+</head>
+
+<body class="service-details-page">
+
+  <script>
+    if(window.location.href !== "http://127.0.0.1:5500/FYP_PUO/index.html" || window.location.href !== "https://haz-pqh.github.io/khamis/" || window.location.href !== "https://haz-pqh.github.io/khamis/index.html"){
+      document.body.style.overflow = "auto"; // Enable scrolling
+      document.getElementById('navmenu').style.display = "flex";
+      document.getElementById('logoPart').style.paddingTop = "0";
+    }
+  </script>
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/logo.png" alt="">
+        <h1 class="sitename">&nbsp;POLITEKNIK UNGKU OMAR</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about copy.html">About</a></li>
+          <li><a href="index.html#services" class="active">Fields Offer</a></li>
+          <li><a href="starter-page.html">Map</a></li>
+          <li><a href="team.html">Team</a></li>
+          <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li> -->
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <!-- <a class="cta-btn" href="index.html#about">Let's know about PUO</a> -->
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/bgPUO.jpg);" id="banner">
+      <div class="layer"></div>
+      <!-- <div class="pile"></div> -->
+      <div class="container position-relative">
+        <h1 id="course_name">- Course Name -</h1>
+        <p id="course_desc">- Simple Description -</p>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html#services">Home</a></li>
+            <li class="current" id="nav_course">- Course Name -</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+    <script>
+        // function createIcon() {
+        //     const icon = document.createElement('div');
+        //     icon.classList.add('icon');
+        //     const icons = [
+        //         '🏗️', '🚧', '🏢', '🔨', '🦺', '🛠️', '⚒️'
+        //     ];
+        //     icon.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+        //     icon.style.left = Math.random() * window.innerWidth + 'px';
+        //     icon.style.animationDuration = (Math.random() * 2 + 2) + 's';
+        //     icon.style.position = 'absolute';
+        //     document.querySelector('.container').appendChild(icon);
+            
+        //     setTimeout(() => {
+        //         icon.style.animation = 'none';
+        //         icon.style.transform = `translateY(calc(47vh - 0px))`;
+                
+        //         // Move to pile
+        //         setTimeout(() => {
+        //             icon.style.position = 'static';
+        //             icon.style.transform = 'none';
+        //             icon.style.setProperty('--rotation', Math.random() * 60 - 30 + 'deg');
+        //             document.querySelector('.pile').appendChild(icon);
+        //         }, 500);
+        //     }, (parseFloat(icon.style.animationDuration) * 1000));
+        // }
+        // setInterval(() => {
+        //     for (let i = 0; i < 20; i++) {
+        //         createIcon();
+        //     }
+        // }, 1000);
+  </script>
+
+
+    <!-- Service Details Section -->
+    <section id="service-details" class="service-details section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+            <h3 id="title_course">- Course Name -</h3>
+            <p id="sypnosis" style="text-align: justify; padding-right: 30px;"></p>
+              <ul>
+                <li id="Programme"><i class="bi bi-check-circle"></i></li>
+                <li id="Code"><i class="bi bi-check-circle"></i>Programme Code : -</li>
+                <li id="Instruction"><i class="bi bi-check-circle"></i>Medium of Instruction : -</li>
+                <li id="Reference"><i class="bi bi-check-circle"></i>Reference : -</li>
+                <li id="Tuition_fee"><i class="bi bi-check-circle"></i>Tuition fee : RM-</li>
+              </ul>
+          </div>
+
+          <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+            <div class="services-list">
+              <a class="cate" data-target="collapseOne" style="cursor: pointer;">Entry Requirement</a>
+              <div class="card">
+                <!-- <div class="card-header" data-target="collapseOne">Floor&nbsp;&nbsp;<span style="font-weight: bold;">1</span> <i class="bi bi-caret-down-fill" style="position: absolute; right: 20px;"></i></div> -->
+                <div id="collapseOne" class="card-body">
+                  <ul id="ER_part">
+                    
+                  </ul>
+                </div>
+              </div>
+              <a class="cate" data-target="collapseThree" style="cursor: pointer;">Career Prospect</a>
+              <div class="card">
+                <!-- <div class="card-header" data-target="collapseOne">Floor&nbsp;&nbsp;<span style="font-weight: bold;">1</span> <i class="bi bi-caret-down-fill" style="position: absolute; right: 20px;"></i></div> -->
+                <div id="collapseThree" class="card-body">
+                  <ul id="CP_part">
+                    
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- <img src="assets/img/services.jpg" alt="" class="img-fluid services-img">
+            <h3>Temporibus et in vero dicta aut eius lidero plastis trand lined voluptas dolorem ut voluptas</h3>
+            <p>
+              Blanditiis voluptate odit ex error ea sed officiis deserunt. Cupiditate non consequatur et doloremque consequuntur. Accusantium labore reprehenderit error temporibus saepe perferendis fuga doloribus vero. Qui omnis quo sit. Dolorem architecto eum et quos deleniti officia qui.
+            </p>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> <span>Aut eum totam accusantium voluptatem.</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Assumenda et porro nisi nihil nesciunt voluptatibus.</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea</span></li>
+            </ul>
+            <p>
+              Est reprehenderit voluptatem necessitatibus asperiores neque sed ea illo. Deleniti quam sequi optio iste veniam repellat odit. Aut pariatur itaque nesciunt fuga.
+            </p>
+            <p>
+              Sunt rem odit accusantium omnis perspiciatis officia. Laboriosam aut consequuntur recusandae mollitia doloremque est architecto cupiditate ullam. Quia est ut occaecati fuga. Distinctio ex repellendus eveniet velit sint quia sapiente cumque. Et ipsa perferendis ut nihil. Laboriosam vel voluptates tenetur nostrum. Eaque iusto cupiditate et totam et quia dolorum in. Sunt molestiae ipsum at consequatur vero. Architecto ut pariatur autem ad non cumque nesciunt qui maxime. Sunt eum quia impedit dolore alias explicabo ea.
+            </p> -->
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Service Details Section -->
+
+    <script>
+      document.querySelectorAll('.cate').forEach(header => {
+          header.addEventListener('click', function () {
+              const targetId = this.getAttribute('data-target');
+              const targetBody = document.getElementById(targetId);
+              const allBodies = document.querySelectorAll('.card-body');
+              
+              allBodies.forEach(body => {
+                  if (body !== targetBody) {
+                      body.classList.remove('show');
+                  }
+              });
+              
+              if (targetBody.classList.contains('show')) {
+                  targetBody.style.maxHeight = "0";
+              } else {
+                  targetBody.style.maxHeight = targetBody.scrollHeight + "px";
+              }
+              this.classList.toggle('active');
+              targetBody.classList.toggle('show');
+          });
+      });
+      // Function to get query parameters from URL
+      function getQueryParam(param) {
+          const urlParams = new URLSearchParams(window.location.search);
+          return urlParams.get(param);
+      }
+
+      // Get the course ID from the URL
+      const courseId = getQueryParam('course');
+
+      var banner = document.getElementById("banner");
+      var title_course = document.getElementById("title_course");
+      var sypnosis = document.getElementById("sypnosis");
+      var Programme = document.getElementById("Programme");
+      // var Code = document.getElementById("Code");
+      var Instruction = document.getElementById("Instruction");
+      // var Reference = document.getElementById("Reference");
+      var Tuition_fee = document.getElementById("Tuition_fee");
+      var nav_course = document.getElementById("nav_course");
+      var course_desc = document.getElementById("course_desc");
+      var course_name = document.getElementById("course_name");
+      var ER_part = document.getElementById("ER_part");
+      var CP_part = document.getElementById("CP_part");
+      
+
+      if(courseId === "DCE"){
+        banner.style.backgroundImage = "url(assets/img/civil1.png)";
+
+        title_course.innerText = "DIPLOMA IN CIVIL ENGINEERING";
+        sypnosis.innerText = "The Diploma in Civil Engineering study program is designed to equip students with the theoretical knowledge, technical skills, and behaviors required in the civil engineering field. The teaching and learning activities are carried out on campus and at construction sites that cover the scope of work in the construction industry, including aspects such as the use of materials and construction technology, structural design and construction methods, laws and regulations of Local Authorities, the importance of safety and occupational health, and environmental care.";
+        Programme.innerHTML = `<i class="bi bi-check-circle"></i>Programme : Diploma in Civil Engineering`;
+        // Code.innerText = "";
+        Instruction.innerText = "";
+        // Reference.innerText = "";
+        Tuition_fee.innerText = "";
+
+        
+        nav_course.innerText = "DIPLOMA IN CIVIL ENGINEERING";
+        course_desc.innerText = "";
+        course_name.innerText = "DIPLOMA IN CIVIL ENGINEERING";
+        ER_part.innerHTML = `<li><i class="bi bi-check2-all"></i><span id="li6">SPM graduate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Malaysian</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Have SPM or equivalent</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Pass Malay</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Pass History (SPM 2013 and above)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Pass English</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Get THREE (3) honours in the following subjects:</span></li>
+                              <li style="padding-left: 40px;"><i class="bi bi-arrow-return-right"></i><span id="li6">Mathematics</span></li>
+                              <li style="padding-left: 40px;"><i class="bi bi-arrow-return-right"></i><span id="li6">ONE (1) Science/Technical/Vocational/STEM Elective subject</span></li>
+                              <li style="padding-left: 40px;"><i class="bi bi-arrow-return-right"></i><span id="li6">ONE (1) other subjects that has not been taken into account</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">ONE (1) other subjects that has not been taken into account</span></li>
+                              <br>
+                              <li><i class="bi bi-check2-all"></i><span id="li6">Graduates other than SPM</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Malaysian</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Passed Certificate level studies recognized by MQA/COPTA/Malaysian Skills Certificate Level 3 in related fields</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Pass SPM with ONE (1) credit in any subject</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Candidates do not have visual (blindness), hearing, physical, or learning disabilities that make practical work difficult.</span></li>
+                              <br>
+                              <li><i class="bi bi-check2-all"></i><span id="li6">Polytechnic Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Certificate of Architecture</span></li>
+                              <br>
+                              <li><i class="bi bi-check2-all"></i><span id="li6">Community College Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Architectural Drawing Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Architectural Draftsman Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Construction Site Supervision Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Interior Design Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Construction Technology Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Building Construction Technology Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Architectural Technology Certificate</span></li>
+                              <br>
+                              <li><i class="bi bi-check2-all"></i><span id="li6">MARA Skills Institute Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Certificate of Architecture</span></li>
+                              <br>
+                              <li><i class="bi bi-check2-all"></i><span id="li6">Malaysian Skills Certificate Level 3</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Architectural Plan Drawing (BC-050-3:2013)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Interior Design Senior Painter (ID-040-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Civil and Structural Engineering Senior Draftsman (B-040-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Senior Architectural Draftsman (BC-050-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Residence Building Construction (BC-030-3:2013)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Civil & Structural Supervisor (CVS3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Drywall Cleanroom Supervisor (DWC 3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Building Construction Supervisor (B-010-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Building Decoration Supervisor (PTD3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Masonry Supervisor (BC-020-3 /MSR3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Decorative Ceiling Installation Supervisor (ID-021-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Drywall Divider Supervisor (DWP 3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Architecture & Building Supervisor (ARB3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Ceiling Supervisor (DCS 3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Formwork System Supervisor (FWK3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Carpenter Supervisor (TCJ3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">SENIOR ARCHITECTURAL DRAWINGSMAN (BC-050-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">SENIOR INTERIOR DRAUGHTSMAN (B-120-3)</span></li>
+                              <br>
+                              <li><i class="bi bi-asterisk" style="color: black; padding-right: 10px;"></i><span id="li6">If the certificate you have is not in the list above, please contact the Student Intake Unit, section Student Intake and Development Division.</span></li>
+                              <br>
+                              <li><i class="bi bi-check2-all"></i><span id="li6">APEL graduate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Malaysian</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Obtain an APEL (Accreditation of Prior Experiential Learning) certificate from MQA for admission to the diploma (Level 4)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Have experience working in a related field</span></li>
+                              <br>`;
+        CP_part.innerHTML = `<li><i class="bi bi-check2-all"></i> <span id="car_1">Architectural Technical Assistant</span></li>
+                              <li><i class="bi bi-check2-all"></i> <span id="car_2">Site Supervisor</span></li>
+                              <li><i class="bi bi-check2-all"></i> <span id="car_3">Site Works Inspector</span></li>
+                              <li><i class="bi bi-check2-all"></i> <span id="car_4">BIM Coordinator</span></li>
+                              <li><i class="bi bi-check2-all"></i> <span id="car_5">3D Maker and Illustrator</span></li>
+                              <li><i class="bi bi-check2-all"></i> <span id="car_6">Architectural Consultant</span></li>
+                              <li><i class="bi bi-check2-all"></i> <span id="car_7">Creative Industry Entrepreneur</span></li>`;
+      }
+      if(courseId === "DE"){
+        banner.style.backgroundImage = "url(assets/img/elect.png)";
+
+        title_course.innerText = "DIPLOMA IN ELECTRICAL AND ELECTRONIC ENGINEERING";
+        sypnosis.innerText = "The Diploma in Electrical and Electronics Engineering program is designed to cover a wide range of disciplines in the field. Students are exposed to the overall Basics of Electricity and Electronics which include the Principles of Electricity and Electronics, Computer Basics and Programming, Computer-Aided Design, Semiconductor Devices, Communication Systems, Wiring Installation, Power Systems, Electrical Machines, and Programmable Logic Controllers. The knowledge and skills learned in these two fields will provide a wide range of employment opportunities for graduates.";
+        Programme.innerHTML = `<i class="bi bi-check-circle"></i>Programme : Diploma in Electrical and Electronics Engineering`;
+        // Code.innerText = "";
+        Instruction.innerText = "";
+        // Reference.innerText = "";
+        Tuition_fee.innerText = "";
+
+        
+        nav_course.innerText = "DIPLOMA IN ELECTRICAL AND ELECTRONIC ENGINEERING";
+        course_desc.innerText = "";
+        course_name.innerText = "DIPLOMA IN ELECTRICAL AND ELECTRONIC ENGINEERING";
+        ER_part.innerHTML = `<li><i class="bi bi-check2-all"></i><span id="li6">SPM graduate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Malaysian</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Have SPM or equivalent</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Pass Malay</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Pass History (SPM 2013 and above)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Pass English</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Get THREE (3) honours in the following subjects:</span></li>
+                              <li style="padding-left: 40px;"><i class="bi bi-arrow-return-right"></i><span id="li6">Mathematics</span></li>
+                              <li style="padding-left: 40px;"><i class="bi bi-arrow-return-right"></i><span id="li6">ONE (1) Science/Technical/Vocational/STEM Elective subject</span></li>
+                              <li style="padding-left: 40px;"><i class="bi bi-arrow-return-right"></i><span id="li6">ONE (1) other subjects that has not been taken into account</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6"> Candidates do not have visual (blindness, colour blindness), hearing, physical, or learning disabilities that make practical work difficult</span></li>
+                              <br>
+                              <li><i class="bi bi-check2-all"></i><span id="li6">Graduates other than SPM</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Malaysian</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Passed MQA-recognized Certificate level studies/Malaysian Skills Certificate Level 3 in a related field</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Candidates do not have visual disabilities (blindness, colour blindness), hearing, physical, or learning disabilities that make practical work difficult</span></li>
+                              <br>
+                              <li><i class="bi bi-check2-all"></i><span id="li6">Level 3 Polytechnic Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Chemical and Process Engineering Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Mechanical Engineering Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Certificate in Mechanical Engineering (Automotive)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Certificate in Mechanical Engineering (Materials)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Certificate in Mechanical Engineering (Plant)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Certificate in Mechanical Engineering (Manufacturing)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Certificate in Mechanical Engineering (Packaging)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Certificate in Mechanical Engineering (Air Conditioning and Refrigeration)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Certificate in Mechanical Engineering (Agriculture)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Mechanical Engineering Certificate (Petroleum)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Certificate in Mechanical Engineering (Plastics)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Certificate in Mechanical Engineering (Textiles)</span></li>
+                              <br>
+                              <li><i class="bi bi-check2-all"></i><span id="li6">Level 3 Community College Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Manufacturing Mechanical Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Refrigeration and Air Conditioning Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Four Wheel Drive Vehicle Maintenance Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Industrial Maintenance Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Light Vehicle Service Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Refrigeration and Air Conditioning Service Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Manufacturing Technology Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Refrigeration and Air Conditioning Technology Certificate</span></li>
+                              <br>
+                              <li><i class="bi bi-check2-all"></i><span id="li6">PERDA Level 3 Higher Skills Institute Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Certificate in Manufacturing Engineering (Machining)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Certificate in Manufacturing Engineering (Tool & Mould Design)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Certificate in Manufacturing Engineering (Product Design)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Agricultural Engineering Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Automotive Technology Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Welding Technology Certificate</span></li>
+                              <br>
+                              <li><i class="bi bi-check2-all"></i><span id="li6">Level 3 MARA Skills Institute Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Commercial Automotive Engineering Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Metal Fabrication Technology Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Automotive Engineering Technology Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Automotive Engineering Technology Certificate (Heavy Machinery)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Certificate in Automotive Engineering Technology (Commercial)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Piping Fabrication Engineering Technology Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Structural Fabrication Engineering Technology Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Marine Engineering Technology Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Industrial Mechanical Engineering Technology Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Mechanical Engineering Technology Certificate (Design Drawing)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Plant Operations Engineering Technology Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Manufacturing Engineering Technology Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Air Conditioning and Refrigeration Engineering Technology Certificate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Welding Technology Certificate</span></li>
+                              <br>
+                              <li><i class="bi bi-check2-all"></i><span id="li6">Malaysian Skills Certificate Level 3</span></li>
+                              <li><i class="bi bi-asterisk" style="color: black; padding-right: 10px;"></i><span id="li6">Need to follow the designated transition (bridging) program.</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Able Seafarer Engine</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">EDDY’S CURRENT TESTER (H-080-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Industrial Quality Assurance (Manufacturing) (MC-041-3:2012)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Class I Gas Booster (B-030-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Class I Gas Operator (B-031-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Class I Gas Booster (FTG3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Senior Automation Technician (H-170-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Senior Automation Technician (H-176-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Steel Structure Fabrication & Assembling Technician (H-200-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">FOUNDRY TECHNICIAN (MELTING) (G-070-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">FOUNDRY TECHNICIAN (MOLD & CORE MAKER (G-080-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">FOUNDRY TECHNICIAN (PATTERN MAKING) (G-090-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">FOUNDRY TECHNICIAN (MOLD CASTING) (G-100-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Rolling Technician (Steel Manufacturing) (G-113-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Industrial Technician (H-100-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Mechanical Precision Tools Senior Technician (MC-010-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Senior Quality Assurance Technician (H-301-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Senior Radiograph Inspection Technician-Welded Construction (Oil & Gas) (MC110-3:2013)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Ultrasonic Inspection Senior Technician-Welded Construction (Oil & Gas) (MC-113-3:2013)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Senior Heat Treatment Technician (MC-071-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Industrial Product Design Senior Technician (H-312-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Sheet Metal Technician (H-070-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Flux Cored Arc Welding Technician (Carbon Steel) (H-028-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Gas Metal Arc Welding Technician (Carbon Steel, Stainless Steel & Aluminium) (H027-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Submerged Arc Welding Technician (Carbon Steel) (H-029-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Armoured Metal Arc Welding Technician (Carbon Steel & Stainless Steel) (H-024-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Gas Tungsten Arc & Shielded Metal Arc Welding Technician (Carbon Steel & Stainless Steel) (H-026-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Gas Tungsten Arc Welding Technician (Carbon Steel & Stainless Steel & Aluminium) (H-025-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Gas Welding Technician (H-022-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Non-Ferrous Metal Welding Technician (H-021-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Melting Technician (Steel Making) (G-111-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Computer Numerical Control (CNC) Machining Technician (CNC Technician) (H013-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Material Handling Technician (Steel Manufacturing) (G-110-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Maintenance Technician (Palm Oil Mill) (Y-033-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Casting Technician (Steel Manufacturing) (G-112-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Structural Technical Engineering Drawings (Oil & Gas) (OG-020-3:2012)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">MAGNETIC PARTICLE TESTER – WELDED CONSTRUCTION (H-150-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">NDT PRACTITIONER (EDDY CURRENT TESTING) L3 (MC-111-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">NDT PRACTITIONER (MAGNETIC PARTICLE TESTING) L3 (MC-114-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Pipe Fabrication Operations</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Metal Structure Fabrication Operations (Oil, Gas & Petrochemical)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Agricultural & Plantation Machinery Operation (AF-062-3:2012)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Steel Manufacturing Operations (MC-076-3:2013 )</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Machining Operations (MC-050-3:2012)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Plastic Production Operations (MC-100-3:2012)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Industrial Maintenance Operations (ME-010-3:2012)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Industrial Heat Treatment Operations (MC-071-3:2014)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Mechanical Engineering Senior Draftsman – Oil & Gas (MC-082-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Mechanical Engineering Senior Draftsman (H-051-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Mechanical Engineering Senior Draftsman (MC-081-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Mechanical Engineering Senior Draftsman-Oil & Gas (H-052-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Mechanical Plan Drawing (MC-080-3:2013)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Electrical Installation (Oil & Gas) (OG-026-3:2014)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Installation of Instruments (Oil & Gas) (OG-027-3:2014)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Mechanical Installation (Oil & Gas) (OG-028-3:2014)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Senior Hardware Maker – Plastic Injection Mould (H-097-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Senior Hardware Maker – Plastic Injection Mould (MC-030-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Senior Hardware Maker – Press Tool (H-096-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Senior Hardware Maker – Metal Stamping (MC-031-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Mould & Die Manufacturing (MC-031-3:2013)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Senior Welding Inspector (H-060-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Welding Inspection (MC-060-3:2012)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Machinery (Rolling Operation) (H-016-3/H-012-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Machinist (Grinding Operation) (H-015-3/H-011-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Machinist (Lathe Operation) (H-014-3/H-010-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">L3 NDT (Penetration Testing) Practitioner (MC-112-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">NDT Practitioner (Industrial Radiographic Testing) L3 (MC-110-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">L3 NDT (Ultrasonic Testing) Practitioner (MC-113-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Metal Forging Production (MC-072-3:2012)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Aerospace Ultrasonic Tester (MC-062-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Underwater Ultrasonic Tester (MC-061-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Eddy Current Testing – (Oil & Gas) (MC-111-3:2014)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Eddy Current Testing – Aerospace Materials, Components & Structures (MC-116-3:2014)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Magnetic Particle Testing – Welded Construction (Oil & Gas) (MC-114-3:2014)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Penetration Testing – Welded Construction (Oil & Gas) (MC-112-3:2014)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Radiographic Testing – Aerospace Materials, Components & Structures (MC-117-3:2014)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Mechanical Marine Maintenance</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Mechanical Printing Machine Maintenance (PR-027-2:2014)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Fabrication Supervisor (Pressure Equipment) (MC-075-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Fabrication Supervisor (SME) (MC-073-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Fabrication Supervisor (Structural) (MC-074-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Rice Mill Supervisor (AF-052-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">MHE Supervisor (MC-043-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Plastics Production Supervisor – Film OPP (PG-090-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Boiler Maintenance Supervisor (H-210-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Maintenance Supervisor (MHE ICT) (MC-042-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Printing Supervisor (Electrical/Electronic) (F-060-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Industrial Automation Engineering Supervision (MC-091-3:2013)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Supervision of Plastic Mould Injection Operations</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Foundry Production Supervision (MC-070-3:2013)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Boiler Operation & Maintenance Services (ME-011-3:2014)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Piping Drafting (Oil & Gas)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Plastic Blow Moulding Production Senior Technician (Thermoplastic) (PG-040-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Plastic Compression Moulding Senior Technician (Thermoset) (PG-060-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Plastic Extrusion</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Production Senior Technician (Thermoplastic) (PG-010-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Plastic Injection Moulding Production Senior Technician (Thermoplastic) (PG-030-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Plastic Injection Moulding Production Senior Technician (Thermoset) (PG-050-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Plastic Rotational Moulding Production Senior Technician (Thermoplastic) (PG-020-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">PRINTING SUPERVISOR (MECHANICAL) (F-050-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Combined Tungsten Gas Arc Welding Process & Metal Pieces (MC-028-3:2014)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Metal Cored Arc Welding Process (MC-027-3:2012)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Tungsten Gas Arc Welding Process (MC-026-3:2012)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Metal Sheet Arc Welding Process (MC-024-3:2012)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Metal Gas Welding Process (MC-025-3:2012)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Industrial Product Design & Development (MC-040-3:2013)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Senior Technician-Mechanical Precision Instrument (H-190-3)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Service & Maintenance of Commercial Vehicles (TP-307-3:2012)</span></li>
+                              <li><i class="bi bi-asterisk" style="color: black; padding-right: 10px;"></i><span id="li6">If the certificate you have is not in the list above, please contact the Student Intake Unit, section Student Intake and Development Division.</span></li>
+                              <br>
+                              <li><i class="bi bi-check2-all"></i><span id="li6">APEL graduate</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Malaysian</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Obtain an APEL (Accreditation of Prior Experiential Learning) certificate from MQA for admission to the diploma (Level 4)</span></li>
+                              <li style="padding-left: 20px;"><i class="bi bi-dot"></i><span id="li6">Have experience working in a related field</span></li>
+                              <br>`;
+        CP_part.innerHTML = `<li><i class="bi bi-check2-all"></i> <span id="car_1">Electrical/ Electronics Technician</span></li>
+                              <li><i class="bi bi-check2-all"></i> <span id="car_2">Electrical Engineering Services Consultant</span></li>
+                              <li><i class="bi bi-check2-all"></i> <span id="car_3">Technical Assistant</span></li>
+                              <li><i class="bi bi-check2-all"></i> <span id="car_4">Electrical/ Electronic Engineering Supervisor</span></li>
+                              <li><i class="bi bi-check2-all"></i> <span id="car_5">Assistant Engineer</span></li>`;
+      }
+
+      let animationInterval;
+
+      function startAnimation() {
+          if (!animationInterval) {
+              animationInterval = setInterval(() => {
+                  for (let i = 0; i < 20; i++) {
+                      createIcon();
+                  }
+              }, 1000);
+          }
+      }
+
+      function stopAnimation() {
+          clearInterval(animationInterval);
+          animationInterval = null;
+          document.querySelectorAll('.icon').forEach(icon => icon.remove());
+      }
+
+      function createIcon() {
+          if (window.innerWidth <= 782) return; // Ensure icons are not created when width is below 782
+
+          const icon = document.createElement('div');
+          icon.classList.add('icon');
+          
+          const courseId = window.courseId || "DCE"; // Ensure courseId is defined
+          let icons = [];
+          
+          if (courseId === "DCE") {
+              icons = ['🏗️', '🚧', '🏢', '🔨', '🦺', '🛠️', '⚒️'];
+          } else if (courseId === "DE") {
+              icons = ['📡', '🔧', '💻', '📟', '🔌', '🖥️', '⚙️'];
+          }
+          
+          if (icons.length === 0) return;
+
+          icon.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+          icon.style.left = Math.random() * window.innerWidth + 'px';
+          icon.style.animationDuration = (Math.random() * 2 + 2) + 's';
+          icon.style.position = 'absolute';
+          
+          document.querySelector('.layer').appendChild(icon);
+
+          setTimeout(() => {
+              icon.style.animation = 'none';
+              icon.style.transform = `translateY(calc(45vh - 0px))`;
+              setTimeout(() => {
+                  icon.remove();
+              }, 5000);
+          }, (parseFloat(icon.style.animationDuration) * 1000));
+      }
+
+      function handleResize() {
+          if (window.innerWidth > 782) {
+              startAnimation();
+          } else {
+              stopAnimation();
+          }
+      }
+
+      window.addEventListener('resize', handleResize);
+      document.addEventListener('DOMContentLoaded', handleResize);
+      
+      
+  </script>
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">POLITEKNIK UNGKU OMAR</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>PUO, Politeknik Ungku Omar, </p>
+            <p>Jalan Raja Musa Mahad 31400 Ipoh Perak</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+1-300-88-1969<</span></p>
+            <p><strong>Email:</strong> <span>puo.edu.my</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href="https://www.youtube.com/user/puowebtv/videos"><i class="bi bi-youtube"></i></a>
+            <a href="https://www.facebook.com/puojke1969/"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/poliungkuomar/"><i class="bi bi-instagram"></i></a>
+            <a href="https://x.com/PUOIPOH"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#about">About</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#services">Fields Offer</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="starter-page.html">Map</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="team.html">Team</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <!-- <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li> -->
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h4>Feedback</h4>
+          <p>Please give us some feedback about our website or about PUO!</p>
+          <form action="forms/newsletter.php" method="post" class="php-email-form">
+            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Send"></div>
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename" style="color: #fff100;">Haxel</strong> <span>All Rights Reserved</span></p>
+      <!-- <div class="credits">
+        All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url]
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href=“https://themewagon.com>ThemeWagon
+      </div> -->
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

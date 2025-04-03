@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Map System</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body { margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background: #f4f4f4; }
+        #container { width: 80%; height: 90vh; background: white; padding: 10px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); }
+        #map { height: 85%; width: 100%; }
+        #search-container {
+            position: relative;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        #search-box {
+            width: 250px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="search-container">
+            <input type="text" id="search-box" placeholder="Search for PUO buildings...">
+            <button onclick="searchBuilding()">Search</button>
+        </div>
+        <div id="map"></div>
+    </div>
+    
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([4.589260, 101.122536], 15);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        var markers = {};
+        var routeLayer;
+        var buildings = {
+            "Kamsis Berlian": [4.590916, 101.121439],
+            "Kamsis Emas": [4.590586, 101.121205],
+            "Kamsis Mutiara": [4.590215, 101.120906],
+            "Kamsis Zamrud": [4.589725, 101.120916],
+            "Kamsis Delima": [4.589375, 101.121196]
+        };
+
+        function searchBuilding() {
+            var searchValue = document.getElementById("search-box").value.toLowerCase();
+            
+            for (var key in markers) {
+                map.removeLayer(markers[key]);
+            }
+            if (routeLayer) {
+                map.removeLayer(routeLayer);
+            }
+            markers = {};
+            
+            var found = false;
+            for (var key in buildings) {
+                if (key.toLowerCase().includes(searchValue)) {
+                    var marker = L.marker(buildings[key], {
+                        icon: L.icon({
+                            iconUrl: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
+                            iconSize: [32, 32],
+                            iconAnchor: [16, 32],
+                            popupAnchor: [0, -32]
+                        })
+                    }).addTo(map).bindPopup(key).openPopup();
+                    markers[key] = marker;
+                    map.setView(buildings[key], 18);
+                    found = true;
+                    
+                    // Draw route from starting point
+                    var startPoint = [4.589260, 101.122536];
+                    routeLayer = L.polyline([startPoint, buildings[key]], {color: 'blue'}).addTo(map);
+                }
+            }
+            
+            if (!found && searchValue !== "") {
+                alert("Building not found! Try Library, Main Hall, Mechanical Block, or Administration Office.");
+            }
+        }
+    </script>
+</body>
+</html>

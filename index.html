@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Sesat&nbsp;-&nbsp;sesat&nbsp;PUO&nbsp;Official&nbsp;Website</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo.png" rel="icon">
+  <link href="assets/img/logo.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- MDB CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.css" />
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Dewi
+  * Template URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+  <style>
+    .card {
+        border: 1px solid #ffffff;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+    .card-header {
+        background: #f8f8f8;
+        padding: 10px;
+        cursor: pointer;
+    }
+    .accordion {
+        padding: 10px;
+        max-height: 0;
+        /* overflow: hidden; */
+        opacity: 0;
+        transition: max-height 0.5s ease, opacity 0.5s ease;
+    }
+    .accordion.show {
+      height: auto !important;
+        opacity: 1;
+    }
+
+    .star-rating {
+        direction: rtl;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .star-rating input {
+        display: none;
+    }
+
+    .star-rating label {
+        color: #ddd;
+        font-size: 24px;
+        padding: 0 2px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .star-rating label:hover,
+    .star-rating label:hover~label,
+    .star-rating input:checked~label {
+        color: #ffc107;
+    }
+
+    #warning{
+      display: none;
+    }
+    @keyframes blink {
+            50% { border-color: transparent; }
+        }
+        
+    /* .logo {
+        width: 200vh;
+        padding-left: 10px;
+        opacity: 0;
+        transform: scale(0);
+        transition: transform 1s ease-out, opacity 0.5s ease-out;
+    }
+    .show-logo {
+        opacity: 1;
+        transform: scale(0.5);
+    } */
+    .stats-section {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+        .stats-header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .stats-header span {
+            color: #ffcc00;
+        }
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .stat-box {
+            background: rgba(0, 0, 0, 0.435);
+            padding: 20px;
+            /* border-radius: 10px; */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            /* justify-content:space-around; */
+            width: 400px;
+        }
+        .stat-icon {
+            font-size: 40px;
+            color: #ffcc00;
+        }
+        .purecounter {
+          color: white;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .stat-text {
+            color: white;
+        }
+</style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html#hero" class="logo d-flex align-items-center me-auto" id="logoPart">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/logo.png" alt="">
+        <h1 class="sitename">&nbsp;POLITEKNIK UNGKU OMAR</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu" style="display: none;">
+        <ul>
+          <li><a href="index.html#hero" class="active">Home</a></li>
+          <li><a href="index.html#services">Fields Offer</a></li>
+          <li><a href="map.html">Map</a></li>
+          <li class="dropdown"><a href="#"><span>About Us</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="about.html">Background</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+              <li><a href="about.html#team">Team</a></li>
+              <li><a href="index.html#services-2">Services</a></li>
+            </ul>
+          </li>
+          
+          <a class="cta-btn" href="feedback.html">Give us some FEEDBACK</a>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+    <img src="assets/img/bgPUO.jpg" style="width: 100%; height: 100vh; position: fixed; z-index: -1;">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background" style="background-color: rgba(0, 0, 0, 0.742);">
+
+      <!-- <img src="assets/img/bgPUO.jpg" alt="" data-aos="fade-in"> -->
+
+      <div class="container d-flex flex-column align-items-center" style="margin-top: 0;">
+        <h2 data-aos="fade-up" data-aos-delay="100" id="text" style="text-align: center; word-wrap: break-word;"></h2>
+        <p data-aos="fade-up" data-aos-delay="200" id="text2"></p>
+        <!-- <img src="assets/img/logoMid2.png" class="logo" id="logo"> -->
+        <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
+          <a href="#about" class="btn-get-started" id="btn">Explore PUO</a>
+          <!-- <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
+        </div>
+      </div>
+
+      <script>
+          const texts = [
+            "Welcome to Politeknik Ungku Omar!", 
+            "Are you intrested to explore PUO ?", 
+            "SESAT - SESAT PUO will help you!",
+            "Let's GO!"
+            // "Join a vibrant community of innovators.", 
+            // "Explore cutting-edge labs and facilities.",
+            // "Shape your future with hands-on learning!"
+        ];
+        
+        const container = document.getElementById("text");
+        const logo = document.getElementById("btn");
+        let textIndex = 0;
+        
+        function typeText(index) {
+            let text = texts[index];
+            container.textContent = "";
+            let charIndex = 0;
+            
+            function type() {
+                if (charIndex < text.length) {
+                    container.textContent += text.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(type, 100);
+                } else if (index < texts.length - 1) {
+                    setTimeout(() => {
+                        textIndex++;
+                        typeText(textIndex);
+                    }, 500);
+                }else{
+                  setTimeout(() => {
+                        logo.classList.add("show");
+                    }, 500);
+                }
+            }
+            type();
+        }
+        
+        typeText(textIndex);
+
+        if(window.location.href === "http://127.0.0.1:5500/sesat-sesat-PUO/index.html" || window.location.href === "https://haz-pqh.github.io/sesat-sesat-PUO/" || window.location.href === "https://haz-pqh.github.io/sesat-sesat-PUO/index.html"){
+          document.getElementById("btn").addEventListener("click", function() {
+            document.body.style.overflow = "auto"; // Enable scrolling
+            document.getElementById('navmenu').style.display = "flex";
+            document.getElementById('logoPart').style.paddingTop = "0";
+            this.disabled = true; // Disable button after click
+          });
+        }else{
+          document.body.style.overflow = "auto"; // Enable scrolling
+          document.getElementById('navmenu').style.display = "flex";
+          document.getElementById('logoPart').style.paddingTop = "0";
+        }
+        
+
+      </script>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <!-- <h3>Politeknik Ungku Omar, Ipoh</h3> -->
+            <img src="assets/img/bgPUO2.jpg" class="img-fluid rounded-4 mb-4" alt="">
+            <h3>Politeknik Ungku Omar, Ipoh</h3>
+            <p>Politeknik Ungku Omar (PUO), established in 1969 in Ipoh, Malaysia, is the country's oldest and most prestigious polytechnic. PUO offers diploma programmes in engineering, business, and IT focusing on practical and industry-relevant skills. PUO provides various services, including career counselling, industrial training, and entrepreneurship support. The polytechnic also offers short courses, and industry collaborations to enhance employability. With modern facilities and strong industry ties, PUO remains a leading institution for technical and vocational education in Malaysia.</p>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+            <div class="content ps-0 ps-lg-5">
+              <p class="fst-italic">
+                Politeknik Ungku Omar (PUO) offers a wide range of diploma programs in various fields to equip students with technical and practical skills for the workforce. Such as :
+              </p>
+              <!-- <p>Politeknik Ungku Omar (PUO) offers a wide range of diploma programs in various fields to equip students with technical and practical skills for the workforce. Below are some of the courses offered:</p> -->
+              <ul>
+                <li><i class="bi bi-check-circle-fill"></i> <span>Engineering & Technology</span></li>
+                <li><i class="bi bi-check-circle-fill"></i> <span>Information Technology & Computer Science</span></li>
+                <li><i class="bi bi-check-circle-fill"></i> <span>Business & Management</span></li>
+                <!-- <li><i class="bi bi-check-circle-fill"></i> <span>Design & Creative Arts</span></li>
+                <li><i class="bi bi-check-circle-fill"></i> <span>Hospitality & Tourism</span></li>
+                <li><i class="bi bi-check-circle-fill"></i> <span>Science & Applied Sciences</span></li> -->
+              </ul>
+              <p>
+                <!-- Corporate Video 2024 Politeknik Ungku Omar -->
+                This video provides an overview of PUO's mission, facilities, and achievements as of 2024.
+              </p>
+
+              <div class="position-relative mt-4">
+                <img src="assets/img/thumnailVidPUO.png" class="img-fluid rounded-4" alt="">
+                <a href="https://www.youtube.com/embed/Z8_vLsd3mo4?si=XPzW80neRwWefpQz" class="glightbox pulsating-play-btn"></a>
+              </div>
+              <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
+                <a href="https://en.wikipedia.org/wiki/Ungku_Omar_Polytechnic" target="_blank" class="btn-get-started2">Get To Wiki</a>
+                <!-- <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Clients Section -->
+    <!-- <section id="clients" class="clients section light-background">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row gy-4">
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
+          </div>
+
+        </div>
+
+      </div>
+
+    </section> -->
+    <!-- /Clients Section -->
+
+    <!-- Stats Section -->
+    <!-- <section id="stats" class="stats section light-background">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-emoji-smile color-blue flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Happy Clients</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-journal-richtext color-orange flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Projects</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-headset color-green flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Hours Of Support</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-people color-pink flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Hard Workers</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section> -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section" style="background-color: rgba(0, 0, 0, 0.742);">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2 style="color: white;">Fields</h2>
+        <p style="color: white;">Fields Offered<br></p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-5">
+
+          <div class="col-xl-4 col-md-6" data-aos="fade-right" data-aos-delay="200">
+            <div class="service-item">
+              <div class="img">
+                <img src="assets/img/engeering_banner.png" class="img-fluid" alt="">
+              </div>
+              <div class="details position-relative">
+                <div class="icon" data-target="accordionFlushExampleX" style="cursor: pointer;">
+                  <i class="bi bi-cpu"></i>
+                </div>
+                <a class="kos" data-target="accordionFlushExampleX" style="cursor: pointer;">
+                  <h3>Engineering & Technology</h3>
+                </a>
+                <p>Focuses on designing, developing, and maintaining infrastructure, machinery, and electronic systems in fields like civil, mechanical, electrical, and marine engineering.</p>
+                <br>
+          
+                <div class="accordion accordion-borderless" id="accordionFlushExampleX">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOneX">
+                      <button class="accordion-button" type="button"
+                        data-mdb-toggle="collapse" data-mdb-target="#flush-collapseOneX"
+                        aria-expanded="true" aria-controls="flush-collapseOneX">
+                        DEPARTMENT OF CIVIL ENGINEERING (JKA)
+                      </button>
+                    </h2>
+                    <div id="flush-collapseOneX" class="accordion-collapse collapse show"
+                      aria-labelledby="flush-headingOneX" data-mdb-parent="#accordionFlushExampleX">
+                      <div class="accordion-body">
+                        <div class="list-group" style="text-align: left; border-radius: 0px;">
+                          <a class="list-group-item" style="padding-right: 50px; border-bottom: 2px solid rgb(209, 209, 209); border-top: 0px; border-left: 0px; border-right: 0px; cursor: pointer;" data-id="DWRE">Diploma in Civil Engineering</a>
+                          <a class="list-group-item" style="padding-right: 50px; border-bottom: 2px solid rgb(209, 209, 209); border-top: 0px; border-left: 0px; border-right: 0px; cursor: pointer;" data-id="DWRE">Diploma in Architecture</a>
+                          <a class="list-group-item" style="padding-right: 50px; border-bottom: 2px solid rgb(209, 209, 209); border-top: 0px; border-left: 0px; border-right: 0px; cursor: pointer;" data-id="DWRE">Diploma in Geomatics </a>
+                          <a class="list-group-item" style="padding-right: 50px; border-bottom: 2px solid rgb(209, 209, 209); border-top: 0px; border-left: 0px; border-right: 0px; cursor: pointer;" data-id="DWRE">Bachelor of Technology in Civil Engineering with Honours</a>
+                        </div> 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTwoX">
+                      <button class="accordion-button collapsed" type="button"
+                        data-mdb-toggle="collapse" data-mdb-target="#flush-collapseTwoX"
+                        aria-expanded="false" aria-controls="flush-collapseTwoX">
+                        DEPARTMENT OF MARINE ENGINEERING (JKP)
+                      </button>
+                    </h2>
+                    <div id="flush-collapseTwoX" class="accordion-collapse collapse"
+                      aria-labelledby="flush-headingTwoX" data-mdb-parent="#accordionFlushExampleX">
+                      <div class="accordion-body">
+                        <a class="list-group-item" style="padding-right: 50px; border-bottom: 2px solid rgb(209, 209, 209); border-top: 0px; border-left: 0px; border-right: 0px; cursor: pointer;" data-id="DWRE">Diploma in Marine Engineering</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingThreeX">
+                      <button class="accordion-button collapsed" type="button"
+                        data-mdb-toggle="collapse" data-mdb-target="#flush-collapseThreeX"
+                        aria-expanded="false" aria-controls="flush-collapseThreeX">
+                        DEPARTMENT OF ELECTRICAL ENGINEERING (JKE)
+                      </button>
+                    </h2>
+                    <div id="flush-collapseThreeX" class="accordion-collapse collapse"
+                      aria-labelledby="flush-headingThreeX" data-mdb-parent="#accordionFlushExampleX">
+                      <div class="accordion-body">
+                        <a class="list-group-item" style="padding-right: 50px; border-bottom: 2px solid rgb(209, 209, 209); border-top: 0px; border-left: 0px; border-right: 0px; cursor: pointer;" data-id="DWRE">Diploma in Electrical and Electronic Engineering</a>
+                        <a class="list-group-item" style="padding-right: 50px; border-bottom: 2px solid rgb(209, 209, 209); border-top: 0px; border-left: 0px; border-right: 0px; cursor: pointer;" data-id="DWRE">Diploma in Electronic Engineering (Communication)</a>
+                        <a class="list-group-item" style="padding-right: 50px; border-bottom: 2px solid rgb(209, 209, 209); border-top: 0px; border-left: 0px; border-right: 0px; cursor: pointer;" data-id="DWRE">Diploma in Electronic Engineering (Computer)</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingFourX">
+                      <button class="accordion-button collapsed" type="button"
+                        data-mdb-toggle="collapse" data-mdb-target="#flush-collapseFourX"
+                        aria-expanded="false" aria-controls="flush-collapseFourX">
+                        DEPARTMENT OF MECHANICAL ENGINEERING (JKM)
+                      </button>
+                    </h2>
+                    <div id="flush-collapseFourX" class="accordion-collapse collapse"
+                      aria-labelledby="flush-headingFourX" data-mdb-parent="#accordionFlushExampleX">
+                      <div class="accordion-body">
+                        <a class="list-group-item" style="padding-right: 50px; border-bottom: 2px solid rgb(209, 209, 209); border-top: 0px; border-left: 0px; border-right: 0px; cursor: pointer;" data-id="DWRE">Diploma in Mechanical Engineering</a>
+                        <a class="list-group-item" style="padding-right: 50px; border-bottom: 2px solid rgb(209, 209, 209); border-top: 0px; border-left: 0px; border-right: 0px; cursor: pointer;" data-id="DWRE">Diploma in Mechanical Engineering (Air Conditioning and Refrigeration) </a>
+                        <a class="list-group-item" style="padding-right: 50px; border-bottom: 2px solid rgb(209, 209, 209); border-top: 0px; border-left: 0px; border-right: 0px; cursor: pointer;" data-id="DWRE">Diploma in Mechatronic Engineering </a>
+                        <a class="list-group-item" style="padding-right: 50px; border-bottom: 2px solid rgb(209, 209, 209); border-top: 0px; border-left: 0px; border-right: 0px; cursor: pointer;" data-id="DWRE">Diploma in Mechanical Engineering (Automotive)</a>
+                        <a class="list-group-item" style="padding-right: 50px; border-bottom: 2px solid rgb(209, 209, 209); border-top: 0px; border-left: 0px; border-right: 0px; cursor: pointer;" data-id="DWRE">Bachelor of Technology in Manufacturing Engineering (Supply Chain Management) with Honours</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+          
+              </div>
+            </div>
+          </div>
+
+          
+          <!-- JavaScript to Ensure `.details` Expands -->
+          <script>
+          
+          // Initialization for ES Users
+          import { Collapse, initMDB } from 'mdb-ui-kit';
+
+          initMDB({ Collapse });
+
+
+          </script>
+          
+
+          <div class="col-xl-4 col-md-6" data-aos="zoom-out" data-aos-delay="200">
+            <div class="service-item">
+              <div class="img">
+                <img src="assets/img/ai.png" class="img-fluid" alt="">
+              </div>
+              <div class="details position-relative">
+                <div class="icon" data-target="accordionFlushExampleXTwo" style="cursor: pointer;">
+                  <i class="bi bi-pc-display"></i>
+                </div>
+                <a class="kos" data-target="accordionFlushExampleXTwo" style="cursor: pointer;">
+                  <h3>Information Technology (IT) & Computer Science</h3>
+                </a>
+                <p>Covers software development, networking, and cybersecurity, preparing students for careers in programming, system management, and IT support.</p>
+                <br>
+                <div class="accordion accordion-borderless" id="accordionFlushExampleXTwo">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingFiveX">
+                      <button class="accordion-button" type="button"
+                        data-mdb-toggle="collapse" data-mdb-target="#flush-collapseFiveX"
+                        aria-expanded="true" aria-controls="flush-collapseFiveX">
+                        DEPARTMENT OF INFORMATION TECHNOLOGY AND COMMUNICATION (JTMK)
+                      </button>
+                    </h2>
+                    <div id="flush-collapseFiveX" class="accordion-collapse collapse show"
+                      aria-labelledby="flush-headingFiveX" data-mdb-parent="#accordionFlushExampleXTwo">
+                      <div class="accordion-body">
+                        <div class="list-group" style="text-align: left; border-radius: 0px;">
+                          <a class="list-group-item" style="padding-right: 50px; border-bottom: 2px solid rgb(209, 209, 209); border-top: 0px; border-left: 0px; border-right: 0px; cursor: pointer;" data-id="DWRE">Diploma in Information Technology (Digital Technology)</a>
+                        </div> 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingSixX">
+                      <button class="accordion-button collapsed" type="button"
+                        data-mdb-toggle="collapse" data-mdb-target="#flush-collapseSixX"
+                        aria-expanded="false" aria-controls="flush-collapseSixX">
+                        DEPARTMENT OF MATHEMATICS, SCIENCE AND COMPUTER (JMSK)
+                      </button>
+                    </h2>
+                    <div id="flush-collapseSixX" class="accordion-collapse collapse"
+                      aria-labelledby="flush-headingSixX" data-mdb-parent="#accordionFlushExampleXTwo">
+                      <div class="accordion-body">
+                        <a class="list-group-item" style="padding-right: 50px; border-bottom: 2px solid rgb(209, 209, 209); border-top: 0px; border-left: 0px; border-right: 0px; cursor: pointer;" data-id="DWRE">TVET Foundation</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-4 col-md-6" data-aos="fade-left" data-aos-delay="200">
+            <div class="service-item">
+              <div class="img">
+                <img src="assets/img/business.png" class="img-fluid" alt="">
+              </div>
+              <div class="details position-relative">
+                <div class="icon" data-target="accordionFlushExampleXThree" style="cursor: pointer;">
+                  <i class="bi bi-briefcase"></i>
+                </div>
+                <a class="kos" data-target="accordionFlushExampleXThree" style="cursor: pointer;">
+                  <h3>Business & Management</h3>
+                </a>
+                <p>Includes accounting, banking and financing, retailing that equipped students with skills for entrepreneurship, corporate management, finance, marketing and logistics.</p>
+                <br>
+                
+                <div class="accordion accordion-borderless" id="accordionFlushExampleXThree">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingSevenX">
+                      <button class="accordion-button" type="button"
+                        data-mdb-toggle="collapse" data-mdb-target="#flush-collapseSevenX"
+                        aria-expanded="true" aria-controls="flush-collapseSevenX">
+                        DEPARTMENT OF COMMERCE (JP)
+                      </button>
+                    </h2>
+                    <div id="flush-collapseSevenX" class="accordion-collapse collapse show"
+                      aria-labelledby="flush-headingSevenX" data-mdb-parent="#accordionFlushExampleXThree">
+                      <div class="accordion-body">
+                        <div class="list-group" style="text-align: left; border-radius: 0px;">
+                          <a class="list-group-item" style="padding-right: 50px; border-bottom: 2px solid rgb(209, 209, 209); border-top: 0px; border-left: 0px; border-right: 0px; cursor: pointer;" data-id="DWRE">Diploma in Accounting</a>
+                          <a class="list-group-item" style="padding-right: 50px; border-bottom: 2px solid rgb(209, 209, 209); border-top: 0px; border-left: 0px; border-right: 0px; cursor: pointer;" data-id="DWRE">Diploma in Finance and Banking</a>
+                          <a class="list-group-item" style="padding-right: 50px; border-bottom: 2px solid rgb(209, 209, 209); border-top: 0px; border-left: 0px; border-right: 0px; cursor: pointer;" data-id="DWRE">Diploma in Business Studies</a>
+                          <a class="list-group-item" style="padding-right: 50px; border-bottom: 2px solid rgb(209, 209, 209); border-top: 0px; border-left: 0px; border-right: 0px; cursor: pointer;" data-id="DWRE">Diploma in Retail Management </a>
+                          <a class="list-group-item" style="padding-right: 50px; border-bottom: 2px solid rgb(209, 209, 209); border-top: 0px; border-left: 0px; border-right: 0px; cursor: pointer;" data-id="DWRE">Diploma in Islamic Finance</a>
+                        </div> 
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+    
+          <script>
+              document.querySelectorAll('.kos').forEach(header => {
+                  header.addEventListener('click', function () {
+                      const targetId = this.getAttribute('data-target');
+                      const targetBody = document.getElementById(targetId);
+                      const allBodies = document.querySelectorAll('.accordion');
+                      
+                      allBodies.forEach(body => {
+                          if (body !== targetBody) {
+                              body.classList.remove('show');
+                              body.style.maxHeight = "0";
+                          }
+                      });
+                      
+                      if (targetBody.classList.contains('show')) {
+                          targetBody.style.maxHeight = "0";
+                      } else {
+                          targetBody.style.maxHeight = targetBody.scrollHeight + "px";
+                      }
+                      
+                      targetBody.classList.toggle('show');
+                  });
+              });
+              document.querySelectorAll('.icon').forEach(header => {
+                  header.addEventListener('click', function () {
+                      const targetId = this.getAttribute('data-target');
+                      const targetBody = document.getElementById(targetId);
+                      const allBodies = document.querySelectorAll('.accordion');
+                      
+                      allBodies.forEach(body => {
+                          if (body !== targetBody) {
+                              body.classList.remove('show');
+                              body.style.maxHeight = "0";
+                          }
+                      });
+                      
+                      if (targetBody.classList.contains('show')) {
+                          targetBody.style.maxHeight = "0";
+                      } else {
+                          targetBody.style.maxHeight = targetBody.scrollHeight + "px";
+                      }
+                      
+                      targetBody.classList.toggle('show');
+                  });
+              });
+              // document.querySelectorAll('.list-group-item').forEach(header => {
+              //     header.addEventListener('click', function () {
+              //         const targetId = this.getAttribute('data-id');
+                      
+              //         window.location.href="service-details.html?course="+targetId;
+              //     });
+              // });
+          </script>
+
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Services 2 Section -->
+    <section id="services-2" class="services-2 section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p>CHECK OUR SERVICES</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-briefcase icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title"><a class="stretched-link">Career Counseling & Guidance</a></h4>
+                <p class="description">Helps students with academic planning, career choices, and job placement assistance.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-card-checklist icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title"><a class="stretched-link">Industrial Training Opportunities</a></h4>
+                <p class="description">Provides students with hands-on experience through internships and industry collaborations.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-bar-chart icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title"><a class="stretched-link">Entrepreneurship Support</a></h4>
+                <p class="description">Offers guidance and resources for students interested in starting their own businesses.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-binoculars icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title"><a class="stretched-link">Student Development Programs</a></h4>
+                <p class="description">Includes leadership training, personal development workshops, and extracurricular activities.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-brightness-high icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title"><a class="stretched-link">Library & Learning Resources</a></h4>
+                <p class="description">Access to a well-equipped library, digital resources, and study facilities.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item d-flex position-relative h-100">
+              <i class="bi bi-calendar4-week icon flex-shrink-0"></i>
+              <div>
+                <h4 class="title"><a class="stretched-link">Technical & Vocational Short Courses</a></h4>
+                <p class="description">Provides skill-based training and certifications for students and the public.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services 2 Section -->
+
+    <!-- Features Section -->
+    <!-- <section id="features" class="features section">
+
+      <div class="container">
+
+        <ul class="nav nav-tabs row  g-2 d-flex" data-aos="fade-up" data-aos-delay="100" role="tablist">
+
+          <li class="nav-item col-2" role="presentation">
+            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1" aria-selected="true" role="tab">
+              <h4>Modisit</h4>
+            </a>
+          </li>End tab nav item
+
+          <li class="nav-item col-2" role="presentation">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2" aria-selected="false" tabindex="-1" role="tab">
+              <h4>Praesenti</h4>
+            </a>End tab nav item
+
+          </li>
+          <li class="nav-item col-2" role="presentation">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-3" aria-selected="false" tabindex="-1" role="tab">
+              <h4>Explica</h4>
+            </a>
+          </li>End tab nav item
+
+          <li class="nav-item col-2" role="presentation">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-4" aria-selected="false" tabindex="-1" role="tab">
+              <h4>Nostrum</h4>
+            </a>
+          </li>End tab nav item
+
+          <li class="nav-item col-2" role="presentation">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-4" aria-selected="false" tabindex="-1" role="tab">
+              <h4>Nostrum</h4>
+            </a>
+          </li>End tab nav item
+
+          <li class="nav-item col-2" role="presentation">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-4" aria-selected="false" tabindex="-1" role="tab">
+              <h4>Nostrum</h4>
+            </a>
+          </li>End tab nav item
+          
+
+        </ul>
+
+        <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="tab-pane fade active show" id="features-tab-1" role="tabpanel">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>Voluptatem dignissimos provident</h3>
+                <p class="fst-italic">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                  magna aliqua.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/features-1.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>End tab content item
+
+          <div class="tab-pane fade" id="features-tab-2" role="tabpanel">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>Neque exercitationem debitis</h3>
+                <p class="fst-italic">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                  magna aliqua.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Provident mollitia neque rerum asperiores dolores quos qui a. Ipsum neque dolor voluptate nisi sed.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/features-2.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>End tab content item
+
+          <div class="tab-pane fade" id="features-tab-3" role="tabpanel">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>Voluptatibus commodi accusamu</h3>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Provident mollitia neque rerum asperiores dolores quos qui a. Ipsum neque dolor voluptate nisi sed.</span></li>
+                </ul>
+                <p class="fst-italic">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                  magna aliqua.
+                </p>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/features-3.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>End tab content item
+
+          <div class="tab-pane fade" id="features-tab-4" role="tabpanel">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>Omnis fugiat ea explicabo sunt</h3>
+                <p class="fst-italic">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                  magna aliqua.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/features-4.jpg" alt="" class="img-fluid">
+              </div>
+            </div>
+          </div>End tab content item
+
+        </div>
+
+      </div>
+
+    </section>/Features Section -->
+    
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section dark-background" style="background-color: rgba(0, 0, 0, 0.742);">
+
+      <!-- <img src="assets/img/bgPUO.jpg" class="testimonials-bg" alt=""> -->
+
+      <!-- <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": false,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+          <div class="swiper-wrapper" id="feedbackList"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div> -->
+      <!-- <div class="stats-section"> -->
+        <!-- <div class="stats-header">
+            <span>——</span> Stats <span>——</span>
+        </div> -->
+        <!-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> -->
+        <div class="container d-flex justify-content-between">
+          <div class="stat-box" data-aos="fade-left" data-aos-delay="100" >
+            <div class="stat-icon"><i class="bi bi-emoji-smile color-blue flex-shrink-0"></i></div>
+              <div data-purecounter-start="0" data-purecounter-end="5611" data-purecounter-duration="2" class="purecounter" >5611</div>
+              <div class="stat-text">On Campus</div>
+            <!-- <div data-purecounter-start="0" data-purecounter-end="5611" data-purecounter-duration="2" class="purecounter" >5611</div>
+            <div class="stat-text">On Campus</div> -->
+          </div>
+          <div class="stat-box" data-aos="fade-left" data-aos-delay="300">
+            <div class="stat-icon"><i class="bi bi-journal-richtext color-orange flex-shrink-0"></i></div>
+            <div data-purecounter-start="0" data-purecounter-end="695" data-purecounter-duration="2" class="purecounter" >695</div>
+            <div class="stat-text">LISA</div>
+          </div>
+          <div class="stat-box" data-aos="fade-left" data-aos-delay="600">
+            <div class="stat-icon"><i class="bi bi-headset color-green flex-shrink-0"></i></div>
+            <div data-purecounter-start="0" data-purecounter-end="6306" data-purecounter-duration="2" class="purecounter" >6306</div>
+            <div class="stat-text">Total Students</div>
+          </div>
+          <!-- <div class="stat-box" data-aos="fade-left" data-aos-delay="900">
+            <div class="stat-icon"><i class="bi bi-people color-pink flex-shrink-0"></i></div>
+            <div data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="2" class="purecounter" >15</div>
+            <div class="stat-text">Hard Workers</div>
+          </div> -->
+        </div>
+      <!-- </div> -->
+    </section><!-- /Testimonials Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>CONTACT</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-6 ">
+            <div class="row gy-4">
+
+              <div class="col-lg-12">
+                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
+                  <i class="bi bi-geo-alt"></i>
+                  <h3>Address</h3>
+                  <p>PUO, Politeknik Ungku Omar, Jalan Raja Musa Mahadi 31400 Ipoh Perak</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="col-md-6">
+                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
+                  <i class="bi bi-telephone"></i>
+                  <h3>Call Us</h3>
+                  <p>05-545 7622</p>
+                  <p>05-545 7260</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="col-md-6">
+                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="400">
+                  <i class="bi bi-envelope"></i>
+                  <h3>Email Us</h3>
+                  <p>webmaster@puo.edu.my</p>
+                </div>
+              </div><!-- End Info Item -->
+
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="info-item" data-aos="fade-up" data-aos-delay="300" style="padding: 0;">
+
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3977.030686981822!2d101.12343167484255!3d4.588515695386132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31caedafd41c6273%3A0xc5bcd6ca01f8d807!2sPoliteknik%20Ungku%20Omar!5e0!3m2!1sen!2smy!4v1742847658784!5m2!1sen!2smy" height="360" style="border:0; width: 100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <!-- <div class="row gy-4 justify-content-center align-items-center">
+                <div class="col-md-12 text-center">
+                    <div class="rating-card p-2">
+                        <h4 class="mb-4">- Give some <span style="font-weight: bold; text-transform: uppercase;">Feedback</span> -</h4>
+                        <div class="star-rating animated-stars">
+                            <input type="radio" id="star5" name="rating" value="5">
+                            <label for="star5" class="bi bi-star-fill"></label>
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4" class="bi bi-star-fill"></label>
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3" class="bi bi-star-fill"></label>
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2" class="bi bi-star-fill"></label>
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1" class="bi bi-star-fill"></label>
+                        </div>
+                        <p class="text-muted mt-2">Click to rate</p>
+                    </div>
+                </div>
+
+                <div class="col-md-10">
+                  <input id="username" type="text" class="form-control" placeholder="Name / Username" required="">
+                </div>
+                <p class="col-md-10" id="warning"></p>
+                <div class="col-md-10">
+                  <textarea id="message" class="form-control" rows="4" placeholder="Comments" required=""></textarea>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <script type="module" src="my_script.js"></script>
+
+                  <button id="addDataBtn" class="btn-get-started">Submit</button>
+                </div>
+              </div> -->
+            </div>
+          </div>
+          <!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-6 col-md-6 footer-about">
+          <a href="index.html#hero" class="logo d-flex align-items-center">
+            <span class="sitename">POLITEKNIK UNGKU OMAR</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>PUO, Politeknik Ungku Omar, </p>
+            <p>Jalan Raja Musa Mahadi 31400 Ipoh Perak</p>
+            <p class="mt-3"><strong>Phone 1 :</strong> <span>05-545 7622</span><br><strong>Phone 2 :</strong> <span>05-545 7260</span></p>
+            <p class="mt-3"><strong>Email :</strong> <span>webmaster@puo.edu.my</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a style="margin-left: 10vh; border: 0;"><img src="assets/img/header2.png" width="200"></a>
+            <a style="margin-left: 20vh; border: 0;"><img class="rounded" src="assets/img/OIP.jpeg" width="130"></a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#about">About Us</a></li>
+            <!-- <li><i class="bi bi-chevron-right"></i> <a href="index.html#services">Fields Offer</a></li> -->
+            <li><i class="bi bi-chevron-right"></i> <a href="starter-page.html">Map</a></li>
+            <!-- <li><i class="bi bi-chevron-right"></i> <a href="team.html">Team</a></li> -->
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-3 footer-links">
+          <h4></h4>
+          <ul>
+            <!-- <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li> -->
+          </ul>
+        </div>
+
+        <!-- <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h4>Feedback</h4>
+          <p>Please give us some feedback about our website or about PUO!</p>
+          <form action="forms/newsletter.php" method="post" class="php-email-form">
+            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Send"></div>
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+          </form>
+        </div> -->
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename" style="color: #fff100;">Haxel</strong> <span>All Rights Reserved</span></p>
+      <!-- <div class="credits">
+        All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url]
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href=“https://themewagon.com>ThemeWagon
+      </div> -->
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- MDB JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.js"></script>
+
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

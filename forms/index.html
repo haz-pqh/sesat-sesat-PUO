@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Map System</title>
+    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" /> -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+ <!-- Leaflet Routing Machine CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" /> 
+<style>
+        body { margin: 0; padding: 0; }
+        #map { height: 100vh; width: 100%; }
+        #search-container {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        #search-box {
+            width: 250px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="search-container">
+        <input type="text" id="search-box" placeholder="Search for PUO buildings..." onkeyup="searchBuilding()">
+        <button onclick="searchBuilding()">Search</button>
+    </div>
+    <div id="map"></div>
+    
+    <!-- <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script> -->
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([4.589702, 101.123238], 18);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            // attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        var markers = {};
+        var routeControl = null;
+        var buildings = {
+            "Kamsis Berlian": [4.590916, 101.121439],
+            "Kamsis Emas": [4.590586, 101.121205],
+            "Kamsis Mutiara": [4.590215, 101.120906],
+            "Kamsis Zamrud": [4.589725, 101.120916],
+            "Kamsis Delima": [4.589375, 101.121196],
+            "Student Center": [4.5874935371058845, 101.12512581327519],
+            "Jabatan Sukan, Ko-Kurikulum dan Kebudayaan": [4.590022475893057, 101.12278605557563],
+            "Blok M": [4.591997621315228, 101.12269521850743],
+            "Jabatan Sukan, Ko-Kurikulum dan Kebudayaan": [4.590022475893057, 101.12278605557563],
+            "Jabatan Sukan, Ko-Kurikulum dan Kebudayaan": [4.590022475893057, 101.12278605557563],
+            "Jabatan Sukan, Ko-Kurikulum dan Kebudayaan": [4.590022475893057, 101.12278605557563],
+            "Jabatan Sukan, Ko-Kurikulum dan Kebudayaan": [4.590022475893057, 101.12278605557563],
+            "Jabatan Sukan, Ko-Kurikulum dan Kebudayaan": [4.590022475893057, 101.12278605557563]
+            
+        };
+        var startPoint1 = [4.5888919741276535, 101.12644358644226]; // First starting point
+var startPoint2 = [4.5913677662656, 101.12378134389347]; // Second starting point
+
+var routeControl1 = null;
+var routeControl2 = null;
+
+function searchBuilding() {
+    var searchValue = document.getElementById("search-box").value.toLowerCase();
+    
+    // Remove all markers and previous routes before searching
+    for (var key in markers) {
+        map.removeLayer(markers[key]);
+    }
+    markers = {};
+    if (routeControl1 !== null) {
+        map.removeControl(routeControl1);
+        routeControl1 = null;
+    }
+    if (routeControl2 !== null) {
+        map.removeControl(routeControl2);
+        routeControl2 = null;
+    }
+    
+    if (searchValue === "") return;
+
+    var lastMatch = null;
+    var minDistance1 = Infinity;
+    var minDistance2 = Infinity;
+    var closestBuilding1 = null;
+    var closestBuilding2 = null;
+
+    for (var key in buildings) {
+        if (key.toLowerCase().includes(searchValue)) {
+            lastMatch = key;
+            // Calculate distances from both starting points
+            var distance1 = getDistance(startPoint1, buildings[key]);
+            var distance2 = getDistance(startPoint2, buildings[key]);
+            
+            if (distance1 < minDistance1) {
+                minDistance1 = distance1;
+                closestBuilding1 = key;
+            }
+            if (distance2 < minDistance2) {
+                minDistance2 = distance2;
+                closestBuilding2 = key;
+            }
+        }
+    }
+
+    if (lastMatch !== null) {
+        var targetBuilding = closestBuilding1 || lastMatch;
+
+        var marker = L.marker(buildings[targetBuilding], {
+            icon: L.icon({
+                iconUrl: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
+                iconSize: [32, 32],
+                iconAnchor: [16, 32],
+                popupAnchor: [0, -32]
+            })
+        }).addTo(map).bindPopup(targetBuilding).openPopup();
+        markers[targetBuilding] = marker;
+        map.setView(buildings[targetBuilding], 18);
+
+        // Route from Gate A (Color: Blue) with custom title
+        routeControl1 = L.Routing.control({
+            waypoints: [
+                L.latLng(startPoint1),
+                L.latLng(buildings[targetBuilding])
+            ],
+            routeWhileDragging: true,
+            lineOptions: { styles: [{ color: 'blue', weight: 5 }] }, // Blue route
+            createMarker: function() { return null; }, // Hide default markers
+            router: L.Routing.osrmv1({ language: 'en', profile: 'foot' }),
+            summaryTemplate: "From Gate A → " + targetBuilding
+        }).addTo(map);
+
+        // Route from Gate B (Color: Green) with custom title
+        routeControl2 = L.Routing.control({
+            waypoints: [
+                L.latLng(startPoint2),
+                L.latLng(buildings[targetBuilding])
+            ],
+            routeWhileDragging: true,
+            lineOptions: { styles: [{ color: 'green', weight: 5 }] }, // Green route
+            createMarker: function() { return null; }, // Hide default markers
+            router: L.Routing.osrmv1({ language: 'en', profile: 'foot' }),
+            summaryTemplate: "From Gate B → " + targetBuilding
+        }).addTo(map);
+    } else {
+        alert("Building not found! Try Library, Main Hall, Mechanical Block, or Administration Office.");
+    }
+}
+
+// Helper function to calculate distance between two points (Haversine formula)
+function getDistance(coord1, coord2) {
+    var lat1 = coord1[0], lon1 = coord1[1];
+    var lat2 = coord2[0], lon2 = coord2[1];
+    var R = 6371; // Radius of Earth in km
+    var dLat = (lat2 - lat1) * Math.PI / 180;
+    var dLon = (lon2 - lon1) * Math.PI / 180;
+    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+            Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c; // Distance in km
+}
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raining Icons Effect</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #282c36;
+        }
+        .icon {
+            position: absolute;
+            top: 0;
+            font-size: 30px;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+        .btn {
+            position: absolute;
+            bottom: 20px;
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn" onclick="rainIcons()">Rain Icons</button>
+
+    <script>
+        function rainIcons() {
+            for (let i = 0; i < 20; i++) {
+                let icon = document.createElement("div");
+                icon.classList.add("icon");
+                icon.innerHTML = "&#9733;"; // Star icon
+                document.body.appendChild(icon);
+                
+                let startPos = Math.random() * window.innerWidth;
+                let duration = Math.random() * 3 + 2; // Between 2-5 seconds
+                let size = Math.random() * 20 + 10; // Random size
+                
+                icon.style.left = startPos + "px";
+                icon.style.animationDuration = duration + "s";
+                icon.style.fontSize = size + "px";
+                icon.style.color = "#ffeb3b"; // Yellow color
+                
+                setTimeout(() => {
+                    icon.remove();
+                }, duration * 1000);
+            }
+        }
+    </script>
+</body>
+</html>

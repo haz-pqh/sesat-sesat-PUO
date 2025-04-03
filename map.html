@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Sesat&nbsp;-&nbsp;sesat&nbsp;PUO&nbsp;Official&nbsp;Website</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo.png" rel="icon">
+  <link href="assets/img/logo.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<!-- Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<!-- Leaflet Routing Machine -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css">
+
+<!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Dewi
+  * Template URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+  <style>
+        .mapFrame {
+            width: fit-content;
+            height: fit-content;
+            text-align: center;
+            /* background: url('assets/img/puoMap1.png') no-repeat center center; */
+            background-size: contain;
+            position: relative;
+        }
+        .location {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.292);
+            cursor: pointer;
+        }
+        .highlight {
+            background-color: rgba(51, 254, 0, 0.572) !important;
+        }
+        .tooltip {
+            display: none;
+            position: absolute;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+            white-space: nowrap;
+        }
+        .search-wrapper {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        
+        .search-box {
+            position: relative;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .search-box:focus-within {
+            box-shadow: 0 3px 20px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        
+        .search-input {
+            border-radius: 50px;
+            padding-left: 45px;
+            padding-right: 20px;
+            border: 1px solid rgb(197, 197, 197);
+            transition: all 0.3s ease;
+            height: 50px;
+        }
+        
+        .search-input:focus {
+            border-color: #e6d900;
+            box-shadow: none;
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6c757d;
+            z-index: 10;
+        }
+        
+        .search-button {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 50px;
+            padding: 8px 20px;
+            transition: all 0.3s ease;
+            background-color: #bcb300;
+            border: 0px;
+        }
+        
+        .search-button:hover {
+            background-color: #e6d900;
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        /* Dark theme search box */
+        .search-box.dark {
+            background-color: #212529;
+        }
+        
+        .search-box.dark .search-input {
+            background-color: #212529;
+            color: #fff;
+        }
+        
+        .search-box.dark .search-input::placeholder {
+            color: #6c757d;
+        }
+        
+        .search-box.dark .search-icon {
+            color: #6c757d;
+        }
+
+  /* Make the map responsive */
+#map {
+    width: 100%;
+    height:75vh; /* Full viewport height */
+    min-height: 400px; /* Ensures visibility on small screens */
+}
+
+/* Styling for route instructions
+#route-instructions {
+    width: 100%;
+    max-height: 20vh; Limit height
+    overflow-y: auto; Enable scrolling if needed
+    background: white;
+    padding: 10px;
+    border-top: 2px solid #ccc;
+    font-family: Arial, sans-serif;
+} */
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    #map {
+        height: 75vh; /* Reduce map height on mobile */
+    }
+
+    #route-instructions {
+        max-height: 25vh; /* Give more space to instructions */
+    }
+}
+
+.leaflet-routing-container {
+    background: rgba(255, 255, 255, 0.8); /* Make it more readable */
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 20px; /* Add spacing between multiple routes */
+}
+
+/* .leaflet-popup-content{
+  width: fit-content;
+}
+
+.leaflet-popup-content-wrapper{
+  width: fit-content;
+} */
+  </style>
+</head>
+
+<body class="starter-page-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html#hero" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/logo.png" alt="">
+        <h1 class="sitename">&nbsp;POLITEKNIK UNGKU OMAR</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu" style="display: none;">
+        <ul>
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#services">Fields Offer</a></li>
+          <li><a href="map.html" class="active">Map</a></li>
+          <li class="dropdown"><a href="#"><span>About Us</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="about.html">Background</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+              <li><a href="about.html#team">Team</a></li>
+              <li><a href="index.html#services-2">Services</a></li>
+            </ul>
+          </li>
+          
+          <a class="cta-btn" href="feedback.html">Give us some FEEDBACK</a>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+    <img src="assets/img/bgPUO.jpg" style="width: 100%; height: 100vh; position: fixed; z-index: -1;">
+    <script>
+      if(window.location.href !== "http://127.0.0.1:5500/FYP_PUO/index.html" || window.location.href !== "https://haz-pqh.github.io/sesat-sesat-PUO/" || window.location.href !== "https://haz-pqh.github.io/sesat-sesat-PUO/index.html"){
+        document.body.style.overflow = "auto"; // Enable scrolling
+        document.getElementById('navmenu').style.display = "flex";
+        document.getElementById('logoPart').style.paddingTop = "0";
+      }
+    </script>
+
+    <!-- Page Title -->
+    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/bgPUO.jpg);">
+      <div class="container position-relative">
+        <h1>Maps of PUO</h1>
+        <!-- <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p> -->
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html#hero">Home</a></li>
+            <li class="current">Maps of PUO</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Starter Section Section -->
+    <section id="features" class="features section">
+
+      <div class="container" data-aos="fade-up">
+        <!-- Features Section -->
+
+        <div class="row">
+          <div class="col-lg-12 order-2 order-lg-1 mt-3 mt-lg-0 text-center">
+            <div class="search-wrapper">
+              <div class="search-box">
+                  <i class="fas fa-search search-icon"></i>
+                  <input type="text" id="search-box" placeholder="Search for a location..." class="form-control search-input" onkeyup="searchBuilding()">
+                  <!-- <button class="btn btn-primary search-button" onclick="searchBuilding()">
+                          Search
+                  </button> -->
+                  <select id="category-select" class="btn btn-primary search-button">
+                      <option value="">All</option>
+                      <option value="Parking">Parking</option>
+                  </select>
+              </div>
+            </div>
+            <div id="map" class="rounded"></div>
+            <div id="route-instructions"></div> <!-- This will contain the route details -->
+          </div>         
+          
+          
+              <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+              <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+              
+              <script>
+                  // var map = L.map('map').setView([4.589702, 101.123238], 17);
+
+                  var map = L.map('map', { 
+                      attributionControl: false // Disable default attribution
+                  }).setView([4.589702, 101.123238], 17);
+
+                  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                      // Remove attribution text
+                      attribution: ''
+                  }).addTo(map);
+
+                  var markers = {};
+                  var markers1 = {};
+                  var routeControl = null;
+                  var buildings = {
+                      "Kamsis Berlian": [4.590916, 101.121439],
+                      "Kamsis Emas": [4.590586, 101.121205],
+                      "Kamsis Mutiara": [4.590215, 101.120906],
+                      "Kamsis Zamrud": [4.589725, 101.120916],
+                      "Kamsis Delima": [4.589375, 101.121196],
+                      "Pusat Pelajar": [4.5874935371058845, 101.12512581327519],
+                      "Jabatan Sukan, Ko - Kurikulum dan Kebudayaan": [4.590022475893057, 101.12278605557563],
+                      "Blok M": [4.591997621315228, 101.12269521850743],
+                      "Jabatan Kejuruteraan Mekanikal (JKM)": [4.588318952130643, 101.12252733528683],
+                      "Jabatan Kejuruteraan Perkapalan (JKP)": [4.5871669252672325, 101.12327038613344],
+                      "Blok B": [4.5906159242016695, 101.12300975200392],
+                      "Kolej Kediaman PUO": [4.590492085254812, 101.12525407826836],
+                      "RTM Perak": [4.592645014787043, 101.12359199087396],
+                      "Jabatan Perdagangan (JP)": [4.591790140831118, 101.12301860961091],
+                      "Jabatan Pengajian Am (JPA)": [4.591460595639705, 101.12289713424828],
+                      "Jabatan Kejuruteraan Awam (Senibina)": [4.590982363520566, 101.1225370119699],
+                      "Jabatan Teknologi Maklumat & Komunikasi (JTMK)": [4.587163387985368, 101.12209617738102],
+                      "Jabatan Kejuruteraan Elektrik (JKE)": [4.586504877977197, 101.12227730380059],
+                      "Jab.Hal Ehwal Pelajar(JHEP) - Jab. Kej Awam (JKA)": [4.588117494270568, 101.1257468280471],
+                      "Unit Pembangunan": [4.588122592759084, 101.12216385278276],
+                      "Pentadbiran": [4.588370332269532, 101.12523361728735],
+                      "Kantin C": [4.590799444794999, 101.12257907620382],
+                      "Kantin A": [4.587874870533513, 101.12495004325996],
+                      "Kantin B": [4.586729081741184, 101.12275803661115],
+                      "Dewan Seri Kinta": [4.590960267760172, 101.12324389739615],
+                      "Dewan Warisan": [4.587936803567306, 101.12524127325403],
+                      "Dewan Jubli Perak": [4.5874665048544445, 101.12383677449331],
+                      "Cafe kediaman PFI": [4.590007350888254, 101.12135925439739],
+                      "CISEC": [4.589244021914386, 101.12556707762924],
+                      "Astaka": [4.589597792245387, 101.12228642235614],
+                      "Perpustakaan": [4.587550229435165, 101.12431460723296],
+                      "Bengkel JKM": [4.588623229862702, 101.1231827540212],
+                      "Bengkel JKA": [4.587966976456118, 101.1237542399432],
+                      "Bilik kuliah JKM - JKA": [4.588749827225871, 101.1251905230592],
+                      "Dewan Kuliah JKM - JKA": [4.588877354940177, 101.12561957304284],
+                      // "UTM": [4.588620157057096, 101.12465005794293],
+                      "Anjung Premier": [4.5891055502401255, 101.12593872062399],
+                      "Pusat Islam": [4.588574358477167, 101.12647386080877],
+                      "Masjid Sultan Azlan Shah": [4.589339243435599, 101.12680670427513],
+                      "JMSK & JKM": [4.588326260591703, 101.12264106582651],
+                      "Parking Bas": [4.5902788958563026, 101.12284376385684],
+                      "Jabatan Matematik, Sains & Komputer (JMSK)": [4.588485652189044, 101.12452122455925],
+                      "Parking 5 petak": [4.588876503872699, 101.12615680339198],
+                      "Parking 9 petak": [4.5916566538448595, 101.12207983806434],
+                      "Parking 14 petak": [4.588721434415553, 101.12587383034196],
+                      "Parking 19 petak": [4.587797858127735, 101.12466508585919],
+                      "Parking 28 petak": [4.586903792382975, 101.12153657204615],
+                      "Parking 37 petak": [4.589040239658182, 101.12333896725326]
+                      
+                  };
+                  var startPoint1 = [4.5888919741276535, 101.12644358644226]; // First starting point
+                  var startPoint2 = [4.5913677662656, 101.12378134389347]; // Second starting point
+
+                  var routeControl1 = null;
+                  var routeControl2 = null;
+
+                  function searchBuilding() {
+                      var searchValue = document.getElementById("search-box").value.toLowerCase();
+                      
+                      // Remove all markers and previous routes before searching
+                      for (var key in markers) {
+                          map.removeLayer(markers[key]);
+                      }
+                      markers = {};
+                      if (routeControl1 !== null) {
+                          map.removeControl(routeControl1);
+                          routeControl1 = null;
+                      }
+                      if (routeControl2 !== null) {
+                          map.removeControl(routeControl2);
+                          routeControl2 = null;
+                      }
+                      
+                      if (searchValue === "") return;
+
+                      var lastMatch = null;
+                      var minDistance1 = Infinity;
+                      var minDistance2 = Infinity;
+                      var closestBuilding1 = null;
+                      var closestBuilding2 = null;
+
+                      for (var key in buildings) {
+                          if (key.toLowerCase().includes(searchValue)) {
+                              lastMatch = key;
+                              // Calculate distances from both starting points
+                              var distance1 = getDistance(startPoint1, buildings[key]);
+                              var distance2 = getDistance(startPoint2, buildings[key]);
+                              
+                              if (distance1 < minDistance1) {
+                                  minDistance1 = distance1;
+                                  closestBuilding1 = key;
+                              }
+                              if (distance2 < minDistance2) {
+                                  minDistance2 = distance2;
+                                  closestBuilding2 = key;
+                              }
+                          }
+                      }
+
+                      if (lastMatch !== null) {
+                          var targetBuilding = closestBuilding1 || lastMatch;
+
+                          var marker = L.marker(buildings[targetBuilding], {
+                              icon: L.icon({
+                                  iconUrl: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
+                                  iconSize: [32, 32],
+                                  iconAnchor: [16, 32],
+                                  popupAnchor: [0, -32]
+                              })
+                          });
+                          if(targetBuilding === "Parking 5 petak" || targetBuilding === "Parking 9 petak" || targetBuilding === "Parking 14 petak" || targetBuilding === "Parking 19 petak" || targetBuilding === "Parking 28 petak" || targetBuilding === "Parking 37 petak" || targetBuilding === "Parking Bas"){
+                            marker.addTo(map).bindPopup('<div style="width: 30vh; height: 24vh; margin-top: 10px; text-align: center;"><img class="rounded" src="assets/img/'+targetBuilding+'.jpg" style=" margin-top: 10px; width: 30vh; height: 24vh; filter: brightness(70%);"><h3 class="text-center" style="padding-top: 15px; width: 30vh;">'+targetBuilding+'</h3>').openPopup();
+                          }else{
+                            marker.addTo(map).bindPopup('<div style="width: 30vh; height: 24vh; margin-top: 10px; text-align: center;"><img class="rounded" src="assets/img/'+targetBuilding+'.jpg" style=" margin-top: 10px; width: 30vh; height: 24vh; filter: brightness(70%);"><a href="'+targetBuilding+'.html" class="glightbox preview-link" style="width: 30vh; height: 24vh;"><i class="bi bi-zoom-in" style="position: absolute; left: 15.5vh; top: 13vh; z-index: 1; font-size: 5vh; color: white;"></i></a></div><h3 class="text-center" style="padding-top: 15px; width: 30vh;">'+targetBuilding+'</h3>').openPopup();
+                          }
+                          markers[targetBuilding] = marker;
+                          map.setView(buildings[targetBuilding], 17);
+
+                          // Route from Gate A (Color: Blue) with custom title
+                          routeControl1 = L.Routing.control({
+                              waypoints: [
+                                  L.latLng(startPoint1),
+                                  L.latLng(buildings[targetBuilding])
+                              ],
+                              routeWhileDragging: true,
+                              lineOptions: { styles: [{ color: 'blue', weight: 5 }] }, // Blue route
+                              createMarker: function() { return null; }, // Hide default markers
+                              router: L.Routing.osrmv1({ language: 'en', profile: 'foot' }),
+                              summaryTemplate: "<span style='font-size: 25px; font-weight: bold;'>From Gate A → " + targetBuilding + "</span>"
+                          }).addTo(map);
+
+                          // Route from Gate B (Color: Green) with custom title
+                          routeControl2 = L.Routing.control({
+                              waypoints: [
+                                  L.latLng(startPoint2),
+                                  L.latLng(buildings[targetBuilding])
+                              ],
+                              routeWhileDragging: true,
+                              lineOptions: { styles: [{ color: 'green', weight: 5 }] }, // Green route
+                              createMarker: function() { return null; }, // Hide default markers
+                              router: L.Routing.osrmv1({ language: 'en', profile: 'foot' }),
+                              summaryTemplate: "<span style='font-size: 25px; font-weight: bold;'>From Gate B → " + targetBuilding + "</span>"
+                          }).addTo(map);
+                      } else {
+                          // alert("Building not found! Try Library, Main Hall, Mechanical Block, or Administration Office.");
+                      }
+                  }
+
+                  // Helper function to calculate distance between two points (Haversine formula)
+                  function getDistance(coord1, coord2) {
+                      var lat1 = coord1[0], lon1 = coord1[1];
+                      var lat2 = coord2[0], lon2 = coord2[1];
+                      var R = 6371; // Radius of Earth in km
+                      var dLat = (lat2 - lat1) * Math.PI / 180;
+                      var dLon = (lon2 - lon1) * Math.PI / 180;
+                      var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                              Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                              Math.sin(dLon / 2) * Math.sin(dLon / 2);
+                      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+                      return R * c; // Distance in km
+                  }
+
+                  var coverageCircle = null; // Variable to store the coverage area
+
+                  function displayCoverageArea() {
+                      var center = [4.589155098187653, 101.12379363761309]; // Center of the coverage
+                      var radius = 400; // Reduced radius for better zoom visibility
+
+                      // Remove existing coverage circle before adding a new one
+                      if (coverageCircle !== null) {
+                          map.removeLayer(coverageCircle);
+                      }
+
+                      coverageCircle = L.circle(center, {
+                          color: 'blue',      // Border color
+                          fillColor: '#3399ff', // Fill color
+                          fillOpacity: 0.2,    // Transparency
+                          radius: radius      // Set radius in meters
+                      }).addTo(map);
+                      
+                      // Keep the zoom level at 17 instead of adjusting to fit bounds
+                      map.setView(center, 17);
+                  }
+
+                  // Call function to display coverage area on map load
+                  displayCoverageArea();
+
+                  var parkingLocations = {
+                      "Parking Bas": [4.5902788958563026, 101.12284376385684],
+                      "Parking 5 petak": [4.588876503872699, 101.12615680339198],
+                      "Parking 9 petak": [4.5916566538448595, 101.12207983806434],
+                      "Parking 14 petak": [4.588721434415553, 101.12587383034196],
+                      "Parking 19 petak": [4.587797858127735, 101.12466508585919],
+                      "Parking 28 petak": [4.586903792382975, 101.12153657204615],
+                      "Parking 37 petak": [4.589040239658182, 101.12333896725326]
+                  };
+
+                  var parkingLocationsMotor = {
+                    
+                    "Parking Motor": [4.588983642615432, 101.12388223738849]
+                  };
+
+                  // function updateMapByCategory() {
+                  //     var category = document.getElementById("category-select").value;
+                  //       let search_bar = document.getElementById("search-box");
+                  //       search_bar.disabled = false;
+                      
+                  //     // Remove all markers and routes
+                  //     for (var key in markers) {
+                  //         map.removeLayer(markers[key]);
+                  //     }
+                  //     markers = {};
+                  //     if (routeControl1 !== null) {
+                  //         map.removeControl(routeControl1);
+                  //         routeControl1 = null;
+                  //     }
+                  //     if (routeControl2 !== null) {
+                  //         map.removeControl(routeControl2);
+                  //         routeControl2 = null;
+                  //     }
+                      
+                  //     if (category === "Parking") {
+                  //       let search_bar = document.getElementById("search-box");
+                  //       search_bar.disabled = true;
+
+                  //         for (var key in parkingLocations) {
+                  //             var marker = L.marker(parkingLocations[key], {
+                  //                 icon: L.icon({
+                  //                     iconUrl: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+                  //                     iconSize: [32, 32],
+                  //                     iconAnchor: [16, 32],
+                  //                     popupAnchor: [0, -32]
+                  //                 })
+                  //             }).addTo(map).bindPopup('<h3>' + key + '</h3>');
+                  //             markers[key] = marker;
+                  //         }
+                  //     }
+                  // }
+
+                  // Store all markers and route controls in arrays
+              // let markers = {};
+              let routeControls = [];
+
+              function updateMapByCategory() {
+                    var category = document.getElementById("category-select").value;
+                    let search_bar = document.getElementById("search-box");
+                    search_bar.disabled = false;
+                    search_bar.value = "";
+
+                    // Remove all markers
+                    for (var key in markers) {
+                        map.removeLayer(markers[key]);
+                    }
+                    markers = {};
+                    for (var key in markers1) {
+                        map.removeLayer(markers1[key]);
+                    }
+                    markers1 = {};
+
+                    if (routeControl1 !== null) {
+                          map.removeControl(routeControl1);
+                          routeControl1 = null;
+                      }
+                      if (routeControl2 !== null) {
+                          map.removeControl(routeControl2);
+                          routeControl2 = null;
+                      }
+                    // Remove all existing routes
+                    routeControls.forEach(control => map.removeControl(control));
+                    routeControls = [];
+
+                    if (category === "Parking") {
+                        search_bar.disabled = true;
+
+                        for (var key in parkingLocations) {
+                            var parkingLatLng = parkingLocations[key];
+
+                            // Custom "⚒️" emoji icon
+                            var customIcon = L.divIcon({
+                                html: "<i class='bi bi-p-circle-fill' style='font-size: 30px; color: blue;'></i>", // Emoji as marker
+                                className: "custom-emoji-icon",
+                                  iconSize: [32, 32],
+                                  iconAnchor: [16, 32],
+                                  popupAnchor: [0, -32]
+                            });
+
+                            // Add Parking Marker with emoji
+                            var marker = L.marker(parkingLatLng, { icon: customIcon })
+                                .addTo(map)
+                                .bindPopup('<div style="width: 30vh; height: 33vh; margin-top: 10px; text-align: center;"><img class="rounded" src="assets/img/'+key+'.jpg" style=" margin-top: 10px; width: 30vh; height: 24vh;"><h3 class="text-center" style="padding-top: 15px; width: 30vh;">'+key+'</h3></div>');
+                            
+                            markers[key] = marker;
+
+                            // Route from Gate A to parking (without instructions)
+                            // var routeControl1 = L.Routing.control({
+                            //     waypoints: [
+                            //         L.latLng(startPoint1),
+                            //         L.latLng(parkingLatLng)
+                            //     ],
+                            //     routeWhileDragging: true,
+                            //     lineOptions: { styles: [{ color: 'blue', weight: 5 }] },
+                            //     createMarker: function() { return null; },
+                            //     router: L.Routing.osrmv1({ language: 'en', profile: 'foot' }),
+                            //     show: false // Hides route instructions
+                            // }).addTo(map);
+                            // routeControls.push(routeControl1);
+
+                            // // Route from Gate B to parking (without instructions)
+                            // var routeControl2 = L.Routing.control({
+                            //     waypoints: [
+                            //         L.latLng(startPoint2),
+                            //         L.latLng(parkingLatLng)
+                            //     ],
+                            //     routeWhileDragging: true,
+                            //     lineOptions: { styles: [{ color: 'green', weight: 5 }] },
+                            //     createMarker: function() { return null; },
+                            //     router: L.Routing.osrmv1({ language: 'en', profile: 'foot' }),
+                            //     show: false // Hides route instructions
+                            // }).addTo(map);
+                            // routeControls.push(routeControl2);
+                        }
+
+                        for (var key in parkingLocationsMotor) {
+                            var parkingLatLng = parkingLocationsMotor[key];
+
+                            // Custom "⚒️" emoji icon
+                            var customIcon = L.divIcon({
+                                html: "<i class='fas fa-motorcycle' style='font-size: 30px; color: blue;'></i>", // Emoji as marker
+                                className: "custom-emoji-icon",
+                                  iconSize: [32, 32],
+                                  iconAnchor: [16, 32],
+                                  popupAnchor: [0, -32]
+                            });
+
+                            // Add Parking Marker with emoji
+                            var marker = L.marker(parkingLatLng, { icon: customIcon })
+                                .addTo(map)
+                                .bindPopup('<div style="width: 30vh; height: 33vh; margin-top: 10px; text-align: center;"><img class="rounded" src="assets/img/'+key+'.jpg" style=" margin-top: 10px; width: 30vh; height: 24vh;"><h3 class="text-center" style="padding-top: 15px; width: 30vh;">'+key+'</h3></div>');
+                            
+                            markers1[key] = marker;
+
+                            // Route from Gate A to parking (without instructions)
+                            // var routeControl1 = L.Routing.control({
+                            //     waypoints: [
+                            //         L.latLng(startPoint1),
+                            //         L.latLng(parkingLatLng)
+                            //     ],
+                            //     routeWhileDragging: true,
+                            //     lineOptions: { styles: [{ color: 'blue', weight: 5 }] },
+                            //     createMarker: function() { return null; },
+                            //     router: L.Routing.osrmv1({ language: 'en', profile: 'foot' }),
+                            //     show: false // Hides route instructions
+                            // }).addTo(map);
+                            // routeControls.push(routeControl1);
+
+                            // // Route from Gate B to parking (without instructions)
+                            // var routeControl2 = L.Routing.control({
+                            //     waypoints: [
+                            //         L.latLng(startPoint2),
+                            //         L.latLng(parkingLatLng)
+                            //     ],
+                            //     routeWhileDragging: true,
+                            //     lineOptions: { styles: [{ color: 'green', weight: 5 }] },
+                            //     createMarker: function() { return null; },
+                            //     router: L.Routing.osrmv1({ language: 'en', profile: 'foot' }),
+                            //     show: false // Hides route instructions
+                            // }).addTo(map);
+                            // routeControls.push(routeControl2);
+                        }
+                        
+                      map.setView([4.589195595438911, 101.12355171526131], 17);
+                    }
+                }
+
+                document.getElementById("category-select").addEventListener("change", updateMapByCategory);
+
+
+
+
+
+              </script>
+            </div>
+            
+            <div class="tooltip" id="tooltip"></div>
+          </div>
+        </div>
+
+    </section>
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-6 col-md-6 footer-about">
+          <a href="index.html#hero" class="logo d-flex align-items-center">
+            <span class="sitename">POLITEKNIK UNGKU OMAR</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>PUO, Politeknik Ungku Omar, </p>
+            <p>Jalan Raja Musa Mahadi 31400 Ipoh Perak</p>
+            <p class="mt-3"><strong>Phone 1 :</strong> <span>05-545 7622</span><br><strong>Phone 2 :</strong> <span>05-545 7260</span></p>
+            <p class="mt-3"><strong>Email :</strong> <span>webmaster@puo.edu.my</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a style="margin-left: 10vh; border: 0;"><img src="assets/img/header2.png" width="200"></a>
+            <a style="margin-left: 20vh; border: 0;"><img class="rounded" src="assets/img/OIP.jpeg" width="130"></a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#about">About Us</a></li>
+            <!-- <li><i class="bi bi-chevron-right"></i> <a href="index.html#services">Fields Offer</a></li> -->
+            <li><i class="bi bi-chevron-right"></i> <a href="starter-page.html">Map</a></li>
+            <!-- <li><i class="bi bi-chevron-right"></i> <a href="team.html">Team</a></li> -->
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-3 footer-links">
+          <h4></h4>
+          <ul>
+            <!-- <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li> -->
+          </ul>
+        </div>
+
+        <!-- <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h4>Feedback</h4>
+          <p>Please give us some feedback about our website or about PUO!</p>
+          <form action="forms/newsletter.php" method="post" class="php-email-form">
+            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Send"></div>
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+          </form>
+        </div> -->
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename" style="color: #fff100;">Haxel</strong> <span>All Rights Reserved</span></p>
+      <!-- <div class="credits">
+        All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url]
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href=“https://themewagon.com>ThemeWagon
+      </div> -->
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

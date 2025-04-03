@@ -1,0 +1,88 @@
+// Define parking locations separately
+var parkingLocations = {
+    "Parking Bas": [4.5902788958563026, 101.12284376385684],
+    "Parking Lot 1": [4.589500, 101.124000],
+    "Parking Lot 2": [4.588800, 101.123500],
+    "Parking Lot 3": [4.590000, 101.125000]
+};
+
+function searchBuilding() {
+    var searchValue = document.getElementById("search-box").value.toLowerCase();
+    
+    // Remove all markers and previous routes before searching
+    for (var key in markers) {
+        map.removeLayer(markers[key]);
+    }
+    markers = {};
+    if (routeControl1 !== null) {
+        map.removeControl(routeControl1);
+        routeControl1 = null;
+    }
+    if (routeControl2 !== null) {
+        map.removeControl(routeControl2);
+        routeControl2 = null;
+    }
+    
+    if (searchValue === "") return;
+    
+    if (searchValue.includes("parking")) {
+        markAndRouteParking();
+        return;
+    }
+    
+    var lastMatch = null;
+    var minDistance1 = Infinity;
+    var minDistance2 = Infinity;
+    var closestBuilding1 = null;
+    var closestBuilding2 = null;
+    
+    for (var key in buildings) {
+        if (key.toLowerCase().includes(searchValue)) {
+            lastMatch = key;
+            var distance1 = getDistance(startPoint1, buildings[key]);
+            var distance2 = getDistance(startPoint2, buildings[key]);
+            
+            if (distance1 < minDistance1) {
+                minDistance1 = distance1;
+                closestBuilding1 = key;
+            }
+            if (distance2 < minDistance2) {
+                minDistance2 = distance2;
+                closestBuilding2 = key;
+            }
+        }
+    }
+    
+    if (lastMatch !== null) {
+        var targetBuilding = closestBuilding1 || lastMatch;
+        addMarkerAndRoutes(targetBuilding);
+    }
+}
+
+function markAndRouteParking() {
+    for (var key in parkingLocations) {
+        var marker = L.marker(parkingLocations[key], {
+            icon: L.icon({
+                iconUrl: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+                iconSize: [32, 32],
+                iconAnchor: [16, 32],
+                popupAnchor: [0, -32]
+            })
+        }).addTo(map).bindPopup('<h3>' + key + '</h3>');
+        markers[key] = marker;
+
+        // Route from Gate A
+        L.Routing.control({
+            waypoints: [
+                L.latLng(startPoint1),
+                L.latLng(parkingLocations[key])
+            ],
+            routeWhileDragging: true,
+            lineOptions: { styles: [{ color: 'blue', weight: 5 }] },
+            createMarker: function() { return null; },
+            router: L.Routing.osrmv1({ language: 'en', profile: 'foot' }),
+            summaryTemplate: "<span style='font-size: 20px; font-weight: bold;'>Route to " + key + "</span>"
+        }).addTo(map);
+    }
+    map.setView(parkingLocations["Parking Bas"], 17);
+}

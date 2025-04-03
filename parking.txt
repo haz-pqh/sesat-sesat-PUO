@@ -1,0 +1,37 @@
+if (category === "Parking") {
+                          for (var key in buildings) {
+                              var marker = L.marker(buildings[key], {
+                                  icon: L.icon({
+                                      iconUrl: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+                                      iconSize: [32, 32],
+                                      iconAnchor: [16, 32],
+                                      popupAnchor: [0, -32]
+                                  })
+                              }).addTo(map).bindPopup('<h3>' + key + '</h3>').openPopup();
+                              markers[key] = marker;
+
+                              // Route from Gate A
+                              L.Routing.control({
+                                  waypoints: [
+                                      L.latLng(startPoint1),
+                                      L.latLng(buildings[key])
+                                  ],
+                                  routeWhileDragging: true,
+                                  lineOptions: { styles: [{ color: 'blue', weight: 5 }] },
+                                  createMarker: function() { return null; },
+                                  router: L.Routing.osrmv1({ language: 'en', profile: 'foot' })
+                              }).addTo(map);
+
+                              // Route from Gate B
+                              L.Routing.control({
+                                  waypoints: [
+                                      L.latLng(startPoint2),
+                                      L.latLng(buildings[key])
+                                  ],
+                                  routeWhileDragging: true,
+                                  lineOptions: { styles: [{ color: 'green', weight: 5 }] },
+                                  createMarker: function() { return null; },
+                                  router: L.Routing.osrmv1({ language: 'en', profile: 'foot' })
+                              }).addTo(map);
+                          }
+                      }

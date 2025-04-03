@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About PUO - Politeknik Ungku Omar</title>
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .hero-section { 
+            background: url('https://example.com/puo-campus.jpg') center/cover no-repeat; 
+            height: 400px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: white;
+            text-align: center;
+        }
+        .animate-on-scroll { opacity: 0; transition: all 0.8s ease-in-out; }
+        .fade-in { opacity: 1 !important; }
+    </style>
+</head>
+<body>
+    <script>
+    if(window.location.href !== "http://127.0.0.1:5500/FYP_PUO/index.html"){
+      document.body.style.overflow = "auto"; // Enable scrolling
+      document.getElementById('navmenu').style.display = "flex";
+      document.getElementById('logoPart').style.paddingTop = "0";
+    }
+  </script>
+    
+    <!-- Navigation -->
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center">
+            <a href="index.html" class="logo d-flex align-items-center me-auto" id="logoPart">
+                <img src="assets/img/logo.png" alt="">
+                <h1 class="sitename">&nbsp;POLITEKNIK UNGKU OMAR</h1>
+            </a>
+            <nav id="navmenu" class="navmenu" style="display: none;">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Fields Offer</a></li>
+                    <li><a href="starter-page.html">Map</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="animate__animated animate__fadeInDown">Welcome to Politeknik Ungku Omar</h1>
+            <p class="animate__animated animate__fadeInUp">Empowering Education for a Brighter Future</p>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="container my-5">
+        <div class="row">
+            <div class="col-md-6 animate-on-scroll">
+                <h2>About PUO</h2>
+                <p>Politeknik Ungku Omar (PUO) is one of Malaysia’s leading polytechnics, known for its excellence in technical education and skill development.</p>
+            </div>
+            <div class="col-md-6 animate-on-scroll text-center">
+                <img src="https://example.com/about.jpg" class="img-fluid rounded" alt="PUO Campus">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Facilities Section -->
+    <section id="facilities" class="container my-5">
+        <h2 class="text-center">Facilities & Campus Life</h2>
+        <div class="row">
+            <div class="col-md-4 animate-on-scroll text-center">
+                <div class="card p-3">
+                    <img src="https://example.com/library.jpg" class="card-img-top" alt="Library">
+                    <div class="card-body">
+                        <h5 class="card-title">Modern Library</h5>
+                        <p class="card-text">State-of-the-art library with thousands of books and digital resources.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 animate-on-scroll text-center">
+                <div class="card p-3">
+                    <img src="https://example.com/lab.jpg" class="card-img-top" alt="Lab">
+                    <div class="card-body">
+                        <h5 class="card-title">Advanced Labs</h5>
+                        <p class="card-text">Equipped with cutting-edge technology for hands-on learning.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 animate-on-scroll text-center">
+                <div class="card p-3">
+                    <img src="https://example.com/sports.jpg" class="card-img-top" alt="Sports">
+                    <div class="card-body">
+                        <h5 class="card-title">Sports Complex</h5>
+                        <p class="card-text">Various sports facilities to support a healthy lifestyle.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-dark text-light text-center py-3 mt-5">
+        <p>&copy; 2025 Politeknik Ungku Omar. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        new WOW().init();
+        document.addEventListener("scroll", function() {
+            document.querySelectorAll(".animate-on-scroll").forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 50) {
+                    el.classList.add("fade-in");
+                }
+            });
+        });
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
